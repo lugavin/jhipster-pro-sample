@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity DataDictionary.
+    -->
+    
+    <changeSet id="20210608092437-1" author="jhipster">
+        <createTable tableName="data_dictionary" remarks="数据字典">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)" remarks="名称">
+                <constraints nullable="true" />
+            </column>
+            <column name="code" type="varchar(255)" remarks="代码">
+                <constraints nullable="true" />
+            </column>
+            <column name="description" type="varchar(255)" remarks="描述">
+                <constraints nullable="true" />
+            </column>
+            <column name="font_color" type="varchar(255)" remarks="字体颜色">
+                <constraints nullable="true" />
+            </column>
+            <column name="background_color" type="varchar(255)" remarks="背景颜色">
+                <constraints nullable="true" />
+            </column>
+            <column name="parent_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here-->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+</databaseChangeLog>

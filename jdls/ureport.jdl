@@ -1,0 +1,26 @@
+/** 报表存储 */
+@skipComponent(repository-serviceClass-listPage-listComponent-updateComponent)
+@skipFakeData
+entity UReportFile {
+    name String /** 名称 */
+    content TextBlob /** 内容 */
+    createAt ZonedDateTime /** 创建时间 */
+    updateAt ZonedDateTime /** 更新时间 */
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+
+    /** 关联表 */
+    UReportFile{commonTable(name)}
+    to
+    CommonTable
+}
+
+service all with serviceClass
+filter *
+dto UReportFile with mapstruct
+paginate UReportFile with pagination
+clientRootFolder UReportFile with report

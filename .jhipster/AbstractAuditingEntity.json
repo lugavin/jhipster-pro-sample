@@ -1,0 +1,40 @@
+{
+  "name": "AbstractAuditingEntity",
+  "fields": [
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String",
+      "javadoc": "创建者Id"
+    },
+    {
+      "fieldName": "created_date",
+      "fieldType": "Instant",
+      "javadoc": "创建时间"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String",
+      "javadoc": "修改者Id"
+    },
+    {
+      "fieldName": "lastModifiedDate",
+      "fieldType": "Instant",
+      "javadoc": "修改时间"
+    }
+  ],
+  "entityTableName": "jhi_auditing",
+  "embedded": false,
+  "javadoc": "用户",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "applications": "*",
+  "skipComponent": "domain-dto-mapper-criteria-repository-controllerTest-serviceClass-restController-listPage-listComponent-clientService",
+  "skipFakeData": true,
+  "skipClient": true,
+  "skipServer": true,
+  "changelogDate": "20210319031651",
+  "relationships": []
+}

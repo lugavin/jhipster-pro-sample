@@ -1,0 +1,33 @@
+{
+  "jhipsterApplicationApp": {
+    "settingsGpsInfo": {
+      "home": {
+        "title": "GPS信息",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 GPS信息",
+        "createOrEditLabel": "创建或编辑 GPS信息",
+        "notFound": "No GPS信息 found"
+      },
+      "created": "GPS信息 {{ param }} 创建成功",
+      "updated": "GPS信息 {{ param }} 更新成功",
+      "deleted": "GPS信息 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 GPS信息 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "GPS信息"
+      },
+      "id": "ID",
+      "type": "Type",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "address": "Address",
+      "help": {
+        "type": "gps坐标类型",
+        "latitude": "纬度",
+        "longitude": "经度",
+        "address": "地址描述"
+      }
+    }
+  }
+}

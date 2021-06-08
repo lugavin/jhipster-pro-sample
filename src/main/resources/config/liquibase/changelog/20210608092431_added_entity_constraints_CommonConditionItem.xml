@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity CommonConditionItem.
+    -->
+    <changeSet id="20210608092431-2" author="jhipster">
+        <addForeignKeyConstraint baseColumnNames="common_condition_id"
+                                 baseTableName="common_condition_item"
+                                 constraintName="fk_common_condition_item__common_condition_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="common_condition"/>
+    </changeSet>
+</databaseChangeLog>

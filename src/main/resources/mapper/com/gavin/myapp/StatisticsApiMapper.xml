@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gavin.myapp.repository.StatisticsApiRepository">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gavin.myapp.domain.StatisticsApi">
+        <id column="id" property="id"/>
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="api_key" property="apiKey"/>
+        <result column="create_at" property="createAt"/>
+        <result column="update_at" property="updateAt"/>
+        <result column="source_type" property="sourceType"/>
+        <result column="api_body" property="apiBody"/>
+        <result column="result" property="result"/>
+        <result column="update_interval" property="updateInterval"/>
+        <result column="last_sql_run_time" property="lastSQLRunTime"/>
+        <result column="enable" property="enable"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,id,title,api_key,create_at,update_at,source_type,api_body,result,update_interval,last_sql_run_time,enable
+    </sql>
+</mapper>

@@ -1,0 +1,7 @@
+export enum SourceType {
+  ENTITY = 'ENTITY',
+
+  DATA_DICTIONARY = 'DATA_DICTIONARY',
+
+  SERVICE_ENTITY = 'SERVICE_ENTITY',
+}

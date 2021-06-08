@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity StatisticsApi.
+    -->
+    
+    <changeSet id="20210608092427-1" author="jhipster">
+        <createTable tableName="statistics_api" remarks="统计Api">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="varchar(200)" remarks="标题">
+                <constraints nullable="true" />
+            </column>
+            <column name="api_key" type="varchar(255)" remarks="ApiKey">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_statistics_api__api_key" />
+            </column>
+            <column name="create_at" type="${datetimeType}" remarks="创建时间">
+                <constraints nullable="true" />
+            </column>
+            <column name="update_at" type="${datetimeType}" remarks="更新时间">
+                <constraints nullable="true" />
+            </column>
+            <column name="source_type" type="varchar(255)" remarks="来源类型">
+                <constraints nullable="true" />
+            </column>
+            <column name="api_body" type="${clobType}" remarks="主体内容">
+                <constraints nullable="true" />
+            </column>
+            <column name="result" type="${clobType}" remarks="可能存放的结果">
+                <constraints nullable="true" />
+            </column>
+            <column name="update_interval" type="integer" remarks="更新间隔(秒)">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_sql_run_time" type="${datetimeType}" remarks="最新运行时间">
+                <constraints nullable="true" />
+            </column>
+            <column name="enable" type="boolean" remarks="是否可用">
+                <constraints nullable="true" />
+            </column>
+            <column name="common_table_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="creator_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="modifier_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here-->
+        </createTable>
+            <dropDefaultValue tableName="statistics_api" columnName="create_at" columnDataType="${datetimeType}"/>
+            <dropDefaultValue tableName="statistics_api" columnName="update_at" columnDataType="${datetimeType}"/>
+            <dropDefaultValue tableName="statistics_api" columnName="last_sql_run_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+</databaseChangeLog>

@@ -1,0 +1,62 @@
+{
+  "jhipsterApplicationApp": {
+    "modelConfigCommonTable": {
+      "home": {
+        "title": "关系模型",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new 关系模型",
+        "createOrEditLabel": "Create or edit a 关系模型",
+        "notFound": "No 关系模型 found"
+      },
+      "created": "A new 关系模型 is created with identifier {{ param }}",
+      "updated": "A 关系模型 is updated with identifier {{ param }}",
+      "deleted": "A 关系模型 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete 关系模型 {{ id }}?"
+      },
+      "detail": {
+        "title": "关系模型"
+      },
+      "id": "ID",
+      "name": "Name",
+      "entityName": "Entity Name",
+      "tableName": "Table Name",
+      "system": "System",
+      "clazzName": "Clazz Name",
+      "generated": "Generated",
+      "creatAt": "Creat At",
+      "generateAt": "Generate At",
+      "generateClassAt": "Generate Class At",
+      "description": "Description",
+      "treeTable": "Tree Table",
+      "baseTableId": "Base Table Id",
+      "recordActionWidth": "Record Action Width",
+      "listConfig": "List Config",
+      "formConfig": "Form Config",
+      "editInModal": "Edit In Modal",
+      "commonTableFields": "字段",
+      "relationships": "关系",
+      "metaModel": "元模型",
+      "creator": "创建人",
+      "businessType": "业务类型",
+      "help": {
+        "name": "名称",
+        "entityName": "实体名称",
+        "tableName": "数据库表名",
+        "system": "系统表",
+        "clazzName": "类名",
+        "generated": "是否生成",
+        "creatAt": "创建时间",
+        "generateAt": "生成表时间",
+        "generateClassAt": "编译时间",
+        "description": "表说明",
+        "treeTable": "树形表",
+        "baseTableId": "来源Id",
+        "recordActionWidth": "操作栏宽度",
+        "listConfig": "前端列表配置",
+        "formConfig": "前端表单配置",
+        "editInModal": "弹窗编辑"
+      }
+    }
+  }
+}

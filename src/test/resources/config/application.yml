@@ -1,0 +1,170 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration is used for unit/integration tests.
+#
+# More information on profiles: https://www.jhipster.tech/profiles/
+# More information on configuration properties: https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+spring:
+  profiles:
+    # Uncomment the following line to enable tests against production database type rather than H2, using Testcontainers
+    #active: testcontainers
+  application:
+    name: jhipsterApplication
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/jhipsterApplicationtest?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    jdbc-url: jdbc:mysql://localhost:3306/jhipsterApplicationtest?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    username:
+    password:
+    hikari:
+      auto-commit: false
+  jackson:
+    serialization:
+      write-durations-as-timestamps: false
+  jpa:
+    database-platform: tech.jhipster.domain.util.FixedH2Dialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    properties:
+      hibernate.id.new_generator_mappings: true
+      hibernate.connection.provider_disables_autocommit: true
+      hibernate.cache.use_second_level_cache: false
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: false
+      hibernate.hbm2ddl.auto: validate
+      hibernate.jdbc.time_zone: UTC
+      hibernate.query.fail_on_pagination_over_collection_fetch: true
+  liquibase:
+    contexts: test
+  mail:
+    host: localhost
+  main:
+    allow-bean-definition-overriding: true
+  messages:
+    basename: i18n/messages
+  task:
+    execution:
+      thread-name-prefix: jhipster-application-task-
+      pool:
+        core-size: 1
+        max-size: 50
+        queue-capacity: 10000
+    scheduling:
+      thread-name-prefix: jhipster-application-scheduling-
+      pool:
+        size: 1
+  thymeleaf:
+    mode: HTML
+
+server:
+  port: 10344
+  address: localhost
+
+# ===================================================================
+# JHipster specific properties
+#
+# Full reference is available at: https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+jhipster:
+  clientApp:
+    name: 'jhipsterApplicationApp'
+  logging:
+    # To test json console appender
+    use-json-format: false
+    logstash:
+      enabled: false
+      host: localhost
+      port: 5000
+      queue-size: 512
+  mail:
+    from: test@localhost
+    base-url: http://127.0.0.1:8080
+  security:
+    authentication:
+      jwt:
+        # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
+        base64-secret: ZGU1ZjdkMTgxYTA5MTJiMWMxZmIyNTc5MWZiNWQ4OWIxMmVmYTQwNTYzZmU2ZDQ0MWYxMzAxZGM1NWRlMDEzMWI2OGZjZWFmMGRiMjJjODA2NTNkNmU3ODMzNjlhODE0NjA4MzA0MzJlYzgyN2JmMTM1Zjg2ZjJjODQ3NTJlMzI=
+        # Token is valid 24 hours
+        token-validity-in-seconds: 86400
+
+# ===================================================================
+# Application specific properties
+# Add your own application properties here, see the ApplicationProperties class
+# to have type-safe configuration, like in the JHipsterProperties above
+#
+# More documentation is available at:
+# https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+# application:
+application:
+  upload:
+    root-path: data
+    domainUrl: /
+    type: local
+  oss:
+    name: local
+    enabled: true
+    endpoint: /
+    bucketName: data
+  smsConfig:
+    daYuConfig:
+      regionId: xxxxxx
+      accessKeyId: xxxxxx
+      secret: xxxxxx
+  pay:
+    wxPay:
+      appId: xxxxxxx #微信公众号或者小程序等的appid
+      mchId: xxxx #微信支付商户号
+      mchKey: xxxxx #微信支付商户密钥
+      subAppId: #服务商模式下的子商户公众账号ID
+      subMchId: #服务商模式下的子商户号
+      keyPath: classpath:config/cert/apiclient_cert.p12 # p12证书的位置，可以指定绝对路径，也可以指定类路径（以classpath:开头）
+  face:
+    arcFace:
+      appId: CHuRTesMsVrfR6pZwyQt7JMkB7BSR4P5QsBxneQvsNzR
+      sdkKey: 3osgFgkF7ygzEuYnTTW99iUvks844N85f5j9Cgn6SKqm
+oauth:
+  qq:
+    client-id: 1015*****
+    client-secret: 1f7d08df55766**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/qq/callback
+  github:
+    client-id: 2d25a70**************
+    client-secret: 5a2919b5fe911567343**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/github/callback
+  wechat:
+    client-id: wxdcb31**************
+    client-secret: b4e9dc6841ef7d**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat/callback
+  google:
+    client-id: 716518501517-6dbdkapivhia806vqcjjh9nttj3**************
+    client-secret: 9IBornd7w1A**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/google/callback
+  microsoft:
+    client-id: 7bdce818-2c8e-4b**************
+    client-secret: Iu0zZ43RQydo_FkD**************
+    redirect-uri: https://oauth.xkcoding.com/demo/oauth/microsoft/callback
+  mi:
+    client-id: 2882303**************
+    client-secret: nFeTt89Yn**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/mi/callback
+mybatis-plus:
+  config-location: classpath:/config/mybatis-config.xml
+diboot:
+  core:
+    init-sql: false

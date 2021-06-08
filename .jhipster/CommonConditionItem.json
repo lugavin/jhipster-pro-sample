@@ -1,0 +1,66 @@
+{
+  "name": "CommonConditionItem",
+  "fields": [
+    {
+      "fieldName": "prefix",
+      "fieldType": "String",
+      "javadoc": "前置符号"
+    },
+    {
+      "fieldName": "fieldName",
+      "fieldType": "String",
+      "javadoc": "字段名称"
+    },
+    {
+      "fieldName": "fieldType",
+      "fieldType": "String",
+      "javadoc": "字段类型"
+    },
+    {
+      "fieldName": "operator",
+      "fieldType": "String",
+      "javadoc": "运算符号"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String",
+      "javadoc": "比较值"
+    },
+    {
+      "fieldName": "suffix",
+      "fieldType": "String",
+      "javadoc": "后缀"
+    },
+    {
+      "fieldName": "order",
+      "fieldType": "Integer",
+      "javadoc": "顺序"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commonCondition",
+      "otherEntityRelationshipName": "items",
+      "javadoc": "查询 config: {\"showInOne\": true}",
+      "relationshipName": "commonCondition",
+      "otherEntityField": "name"
+    }
+  ],
+  "javadoc": "通用条件条目",
+  "entityTableName": "common_condition_item",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipFakeData": true,
+  "skipComponent": "listComponent",
+  "microServiceCore": true,
+  "skipMenu": true,
+  "clientRootFolder": "report",
+  "changelogDate": "20210608092431"
+}

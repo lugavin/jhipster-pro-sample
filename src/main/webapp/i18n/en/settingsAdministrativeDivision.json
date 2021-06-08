@@ -1,0 +1,45 @@
+{
+  "jhipsterApplicationApp": {
+    "settingsAdministrativeDivision": {
+      "home": {
+        "title": "行政区划",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new 行政区划",
+        "createOrEditLabel": "Create or edit a 行政区划",
+        "notFound": "No 行政区划 found"
+      },
+      "created": "A new 行政区划 is created with identifier {{ param }}",
+      "updated": "A 行政区划 is updated with identifier {{ param }}",
+      "deleted": "A 行政区划 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete 行政区划 {{ id }}?"
+      },
+      "detail": {
+        "title": "行政区划"
+      },
+      "id": "ID",
+      "name": "Name",
+      "areaCode": "Area Code",
+      "cityCode": "City Code",
+      "mergerName": "Merger Name",
+      "shortName": "Short Name",
+      "zipCode": "Zip Code",
+      "level": "Level",
+      "lng": "Lng",
+      "lat": "Lat",
+      "children": "子节点",
+      "parent": "上级节点",
+      "help": {
+        "name": "名称",
+        "areaCode": "地区代码",
+        "cityCode": "城市代码",
+        "mergerName": "全名",
+        "shortName": "短名称",
+        "zipCode": "邮政编码",
+        "level": "行政区域等级（0: 省级 1:市级 2:县级 3:镇级 4:乡村级）",
+        "lng": "经度",
+        "lat": "纬度"
+      }
+    }
+  }
+}

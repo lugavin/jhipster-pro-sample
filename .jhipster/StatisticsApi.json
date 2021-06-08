@@ -1,0 +1,111 @@
+{
+  "name": "StatisticsApi",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "javadoc": "标题",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "apiKey",
+      "fieldType": "String",
+      "javadoc": "ApiKey",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "createAt",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "创建时间",
+      "options": {
+        "createdDate": true
+      }
+    },
+    {
+      "fieldName": "updateAt",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "更新时间",
+      "options": {
+        "lastModifiedDate": true
+      }
+    },
+    {
+      "fieldName": "sourceType",
+      "fieldType": "StatSourceType",
+      "javadoc": "来源类型",
+      "fieldValues": "HTTP,SQL,JSON,EXCEL"
+    },
+    {
+      "fieldName": "apiBody",
+      "fieldType": "byte[]",
+      "javadoc": "主体内容",
+      "fieldTypeBlobContent": "text",
+      "options": {
+        "endUsed": "codeEditor"
+      }
+    },
+    {
+      "fieldName": "result",
+      "fieldType": "byte[]",
+      "javadoc": "可能存放的结果",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "updateInterval",
+      "fieldType": "Integer",
+      "javadoc": "更新间隔(秒)"
+    },
+    {
+      "fieldName": "lastSQLRunTime",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "最新运行时间"
+    },
+    {
+      "fieldName": "enable",
+      "fieldType": "Boolean",
+      "javadoc": "是否可用"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commonTable",
+      "otherEntityRelationshipName": "statisticsApi",
+      "javadoc": "所属表",
+      "relationshipName": "commonTable",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "statisticsApi",
+      "javadoc": "创建人",
+      "relationshipName": "creator",
+      "otherEntityField": "firstName"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "statisticsApi",
+      "javadoc": "修改人",
+      "relationshipName": "modifier",
+      "otherEntityField": "firstName"
+    }
+  ],
+  "javadoc": "统计Api",
+  "entityTableName": "statistics_api",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipFakeData": true,
+  "skipComponent": "restController-queryService-clientService-updateComponent-updatePage",
+  "microServiceCore": true,
+  "clientRootFolder": "report",
+  "changelogDate": "20210608092427"
+}

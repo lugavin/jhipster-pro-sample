@@ -1,0 +1,37 @@
+{
+  "jhipsterApplicationApp": {
+    "settingsDataDictionary": {
+      "home": {
+        "title": "数据字典",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new 数据字典",
+        "createOrEditLabel": "Create or edit a 数据字典",
+        "notFound": "No 数据字典 found"
+      },
+      "created": "A new 数据字典 is created with identifier {{ param }}",
+      "updated": "A 数据字典 is updated with identifier {{ param }}",
+      "deleted": "A 数据字典 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete 数据字典 {{ id }}?"
+      },
+      "detail": {
+        "title": "数据字典"
+      },
+      "id": "ID",
+      "name": "Name",
+      "code": "Code",
+      "description": "Description",
+      "fontColor": "Font Color",
+      "backgroundColor": "Background Color",
+      "children": "子节点",
+      "parent": "上级节点",
+      "help": {
+        "name": "名称",
+        "code": "代码",
+        "description": "描述",
+        "fontColor": "字体颜色",
+        "backgroundColor": "背景颜色"
+      }
+    }
+  }
+}

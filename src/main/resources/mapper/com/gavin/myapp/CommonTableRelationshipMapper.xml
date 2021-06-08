@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gavin.myapp.repository.CommonTableRelationshipRepository">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gavin.myapp.domain.CommonTableRelationship">
+        <id column="id" property="id"/>
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="relationship_type" property="relationshipType"/>
+        <result column="source_type" property="sourceType"/>
+        <result column="other_entity_field" property="otherEntityField"/>
+        <result column="other_entity_name" property="otherEntityName"/>
+        <result column="relationship_name" property="relationshipName"/>
+        <result column="other_entity_relationship_name" property="otherEntityRelationshipName"/>
+        <result column="column_width" property="columnWidth"/>
+        <result column="`order`" property="order"/>
+        <result column="fixed" property="fixed"/>
+        <result column="edit_in_list" property="editInList"/>
+        <result column="enable_filter" property="enableFilter"/>
+        <result column="hide_in_list" property="hideInList"/>
+        <result column="hide_in_form" property="hideInForm"/>
+        <result column="`system`" property="system"/>
+        <result column="font_color" property="fontColor"/>
+        <result column="background_color" property="backgroundColor"/>
+        <result column="help" property="help"/>
+        <result column="owner_side" property="ownerSide"/>
+        <result column="data_name" property="dataName"/>
+        <result column="web_component_type" property="webComponentType"/>
+        <result column="other_entity_is_tree" property="otherEntityIsTree"/>
+        <result column="show_in_filter_tree" property="showInFilterTree"/>
+        <result column="data_dictionary_code" property="dataDictionaryCode"/>
+        <result column="client_read_only" property="clientReadOnly"/>
+        <result column="end_used" property="endUsed"/>
+        <result column="options" property="options"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,id,name,relationship_type,source_type,other_entity_field,other_entity_name,relationship_name,other_entity_relationship_name,column_width,`order`,fixed,edit_in_list,enable_filter,hide_in_list,hide_in_form,`system`,font_color,background_color,help,owner_side,data_name,web_component_type,other_entity_is_tree,show_in_filter_tree,data_dictionary_code,client_read_only,end_used,options
+    </sql>
+</mapper>

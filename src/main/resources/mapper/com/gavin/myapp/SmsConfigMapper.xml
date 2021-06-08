@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gavin.myapp.repository.SmsConfigRepository">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gavin.myapp.domain.SmsConfig">
+        <id column="id" property="id"/>
+        <result column="id" property="id"/>
+        <result column="provider" property="provider"/>
+        <result column="sms_code" property="smsCode"/>
+        <result column="template_id" property="templateId"/>
+        <result column="access_key" property="accessKey"/>
+        <result column="secret_key" property="secretKey"/>
+        <result column="region_id" property="regionId"/>
+        <result column="sign_name" property="signName"/>
+        <result column="remark" property="remark"/>
+        <result column="enabled" property="enabled"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,id,provider,sms_code,template_id,access_key,secret_key,region_id,sign_name,remark,enabled
+    </sql>
+</mapper>

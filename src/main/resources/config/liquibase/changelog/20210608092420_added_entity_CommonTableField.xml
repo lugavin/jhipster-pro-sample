@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity CommonTableField.
+    -->
+    
+    <changeSet id="20210608092420-1" author="jhipster">
+        <createTable tableName="common_table_field" remarks="模型字段">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="varchar(100)" remarks="标题">
+                <constraints nullable="false" />
+            </column>
+            <column name="entity_field_name" type="varchar(100)" remarks="属性名称">
+                <constraints nullable="false" />
+            </column>
+            <column name="type" type="varchar(255)" remarks="数据类型">
+                <constraints nullable="false" />
+            </column>
+            <column name="table_column_name" type="varchar(100)" remarks="字段名称">
+                <constraints nullable="false" />
+            </column>
+            <column name="column_width" type="integer" remarks="列宽">
+                <constraints nullable="true" />
+            </column>
+            <column name="order" type="integer" remarks="显示顺序">
+                <constraints nullable="true" />
+            </column>
+            <column name="edit_in_list" type="boolean" remarks="行内编辑">
+                <constraints nullable="true" />
+            </column>
+            <column name="hide_in_list" type="boolean" remarks="列表隐藏">
+                <constraints nullable="true" />
+            </column>
+            <column name="hide_in_form" type="boolean" remarks="表单隐藏">
+                <constraints nullable="true" />
+            </column>
+            <column name="enable_filter" type="boolean" remarks="可过滤">
+                <constraints nullable="true" />
+            </column>
+            <column name="validate_rules" type="varchar(800)" remarks="验证规则">
+                <constraints nullable="true" />
+            </column>
+            <column name="show_in_filter_tree" type="boolean" remarks="显示在过滤树">
+                <constraints nullable="true" />
+            </column>
+            <column name="fixed" type="varchar(255)" remarks="列固定">
+                <constraints nullable="true" />
+            </column>
+            <column name="sortable" type="boolean" remarks="可排序">
+                <constraints nullable="true" />
+            </column>
+            <column name="tree_indicator" type="boolean" remarks="树形标识">
+                <constraints nullable="true" />
+            </column>
+            <column name="client_read_only" type="boolean" remarks="前端只读">
+                <constraints nullable="true" />
+            </column>
+            <column name="field_values" type="varchar(2000)" remarks="值范围">
+                <constraints nullable="true" />
+            </column>
+            <column name="not_null" type="boolean" remarks="必填">
+                <constraints nullable="true" />
+            </column>
+            <column name="system" type="boolean" remarks="系统字段">
+                <constraints nullable="true" />
+            </column>
+            <column name="help" type="varchar(200)" remarks="字段说明">
+                <constraints nullable="true" />
+            </column>
+            <column name="font_color" type="varchar(80)" remarks="字体颜色">
+                <constraints nullable="true" />
+            </column>
+            <column name="background_color" type="varchar(80)" remarks="列背景色">
+                <constraints nullable="true" />
+            </column>
+            <column name="null_hide_in_form" type="boolean" remarks="空值隐藏">
+                <constraints nullable="true" />
+            </column>
+            <column name="end_used" type="varchar(255)" remarks="前端用法">
+                <constraints nullable="true" />
+            </column>
+            <column name="options" type="varchar(255)" remarks="关系配置项">
+                <constraints nullable="true" />
+            </column>
+            <column name="meta_model_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="common_table_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here-->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20210608092420-1-data" author="jhipster">
+        <loadData
+                  file="config/liquibase/data/common_table_field.csv"
+                  separator=";"
+                  tableName="common_table_field">
+            <column name="id" type="numeric"/>
+            <column name="title" type="string"/>
+            <column name="entity_field_name" type="string"/>
+            <column name="type" type="string"/>
+            <column name="table_column_name" type="string"/>
+            <column name="column_width" type="numeric"/>
+            <column name="order" type="numeric"/>
+            <column name="edit_in_list" type="boolean"/>
+            <column name="hide_in_list" type="boolean"/>
+            <column name="hide_in_form" type="boolean"/>
+            <column name="enable_filter" type="boolean"/>
+            <column name="validate_rules" type="string"/>
+            <column name="show_in_filter_tree" type="boolean"/>
+            <column name="fixed" type="string"/>
+            <column name="sortable" type="boolean"/>
+            <column name="tree_indicator" type="boolean"/>
+            <column name="client_read_only" type="boolean"/>
+            <column name="field_values" type="string"/>
+            <column name="not_null" type="boolean"/>
+            <column name="system" type="boolean"/>
+            <column name="help" type="string"/>
+            <column name="font_color" type="string"/>
+            <column name="background_color" type="string"/>
+            <column name="null_hide_in_form" type="boolean"/>
+            <column name="end_used" type="string"/>
+            <column name="options" type="string"/>
+            <column name="common_table_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

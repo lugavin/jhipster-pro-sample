@@ -1,0 +1,83 @@
+{
+  "name": "ApiPermission",
+  "fields": [
+    {
+      "fieldName": "serviceName",
+      "fieldType": "String",
+      "javadoc": "服务名称"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "权限名称"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "javadoc": "权限代码(ROLE_开头)"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "javadoc": "权限描述"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "ApiPermissionType",
+      "javadoc": "类型",
+      "fieldValues": "BUSINESS,API,ENTITY,MICRO_SERVICE"
+    },
+    {
+      "fieldName": "method",
+      "fieldType": "String",
+      "javadoc": "请求类型"
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String",
+      "javadoc": "url 地址"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "apiPermission",
+      "otherEntityRelationshipName": "parent",
+      "javadoc": "子节点",
+      "relationshipName": "children",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "apiPermission",
+      "otherEntityRelationshipName": "children",
+      "javadoc": "上级",
+      "relationshipName": "parent",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "authority",
+      "otherEntityRelationshipName": "apiPermissions",
+      "javadoc": "角色列表",
+      "relationshipName": "authorities",
+      "otherEntityField": "name",
+      "ownerSide": false
+    }
+  ],
+  "javadoc": "API权限\\n菜单或按钮下有相关的api权限",
+  "entityTableName": "api_permission",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipFakeData": true,
+  "skipComponent": "repository-serviceClass-restController-listPage-listComponent-clientService",
+  "microServiceCore": true,
+  "clientRootFolder": "system",
+  "changelogDate": "20210608092422"
+}

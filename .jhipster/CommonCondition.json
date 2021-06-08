@@ -1,0 +1,58 @@
+{
+  "name": "CommonCondition",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "名称",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "javadoc": "描述"
+    },
+    {
+      "fieldName": "lastModifiedTime",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "最后更新时间",
+      "options": {
+        "lastModifiedDate": true
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "commonConditionItem",
+      "otherEntityRelationshipName": "commonCondition",
+      "javadoc": "条件项目 config: {\"showInOne\": true}",
+      "relationshipName": "items",
+      "otherEntityField": "fieldName"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commonTable",
+      "otherEntityRelationshipName": "commonCondition",
+      "javadoc": "所属模型 config: { \"addFilterFieldName\": \"clazzName\"}",
+      "relationshipName": "commonTable",
+      "otherEntityField": "name"
+    }
+  ],
+  "javadoc": "通用条件",
+  "entityTableName": "common_condition",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipFakeData": true,
+  "skipComponent": "queryService-updateComponent-updatePage",
+  "microServiceCore": true,
+  "clientRootFolder": "report",
+  "changelogDate": "20210608092438"
+}

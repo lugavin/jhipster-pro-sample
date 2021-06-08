@@ -1,0 +1,167 @@
+{
+  "name": "CommonTable",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "名称",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "80"
+    },
+    {
+      "fieldName": "entityName",
+      "fieldType": "String",
+      "javadoc": "实体名称",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "80"
+    },
+    {
+      "fieldName": "tableName",
+      "fieldType": "String",
+      "javadoc": "数据库表名",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "80"
+    },
+    {
+      "fieldName": "system",
+      "fieldType": "Boolean",
+      "javadoc": "系统表"
+    },
+    {
+      "fieldName": "clazzName",
+      "fieldType": "String",
+      "javadoc": "类名",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "80"
+    },
+    {
+      "fieldName": "generated",
+      "fieldType": "Boolean",
+      "javadoc": "是否生成",
+      "options": {
+        "fieldConfig": "hideInList-hideInForm"
+      }
+    },
+    {
+      "fieldName": "creatAt",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "创建时间"
+    },
+    {
+      "fieldName": "generateAt",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "生成表时间"
+    },
+    {
+      "fieldName": "generateClassAt",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "编译时间"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "javadoc": "表说明",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200",
+      "options": {
+        "fieldConfig": "hideInList"
+      }
+    },
+    {
+      "fieldName": "treeTable",
+      "fieldType": "Boolean",
+      "javadoc": "树形表"
+    },
+    {
+      "fieldName": "baseTableId",
+      "fieldType": "Long",
+      "javadoc": "来源Id"
+    },
+    {
+      "fieldName": "recordActionWidth",
+      "fieldType": "Integer",
+      "javadoc": "操作栏宽度"
+    },
+    {
+      "fieldName": "listConfig",
+      "fieldType": "byte[]",
+      "javadoc": "前端列表配置",
+      "fieldTypeBlobContent": "text",
+      "options": {
+        "fieldConfig": "hideInList-hideInForm"
+      }
+    },
+    {
+      "fieldName": "formConfig",
+      "fieldType": "byte[]",
+      "javadoc": "前端表单配置",
+      "fieldTypeBlobContent": "text",
+      "options": {
+        "fieldConfig": "hideInList-hideInForm"
+      }
+    },
+    {
+      "fieldName": "editInModal",
+      "fieldType": "Boolean",
+      "javadoc": "弹窗编辑"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "commonTableField",
+      "otherEntityRelationshipName": "commonTable",
+      "javadoc": "字段 config: {\"showInOne\": true, \"orderBy\": \"order asc\"}",
+      "relationshipName": "commonTableFields",
+      "otherEntityField": "title"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "commonTableRelationship",
+      "otherEntityRelationshipName": "commonTable",
+      "javadoc": "关系 config: {\"showInOne\": true, \"orderBy\": \"order asc\"}",
+      "relationshipName": "relationships",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commonTable",
+      "otherEntityRelationshipName": "commonTable",
+      "javadoc": "元模型",
+      "relationshipName": "metaModel",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "commonTable",
+      "javadoc": "创建人 config: {\"createdBy\": true}",
+      "relationshipName": "creator",
+      "otherEntityField": "login"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "businessType",
+      "otherEntityRelationshipName": "commonTable",
+      "javadoc": "业务类型",
+      "relationshipName": "businessType",
+      "otherEntityField": "name"
+    }
+  ],
+  "javadoc": "关系模型",
+  "entityTableName": "common_table",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "importData": true,
+  "skipComponent": "repository-serviceClass-restController-listPage-listComponent-clientService-updateComponent-clientRoute",
+  "microServiceCore": true,
+  "extendData": true,
+  "clientRootFolder": "modelConfig",
+  "changelogDate": "20210608092433"
+}

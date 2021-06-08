@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gavin.myapp.repository.CommonTableRepository">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gavin.myapp.domain.CommonTable">
+        <id column="id" property="id"/>
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="entity_name" property="entityName"/>
+        <result column="table_name" property="tableName"/>
+        <result column="`system`" property="system"/>
+        <result column="clazz_name" property="clazzName"/>
+        <result column="`generated`" property="generated"/>
+        <result column="creat_at" property="creatAt"/>
+        <result column="generate_at" property="generateAt"/>
+        <result column="generate_class_at" property="generateClassAt"/>
+        <result column="description" property="description"/>
+        <result column="tree_table" property="treeTable"/>
+        <result column="base_table_id" property="baseTableId"/>
+        <result column="record_action_width" property="recordActionWidth"/>
+        <result column="list_config" property="listConfig"/>
+        <result column="form_config" property="formConfig"/>
+        <result column="edit_in_modal" property="editInModal"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,id,name,entity_name,table_name,`system`,clazz_name,`generated`,creat_at,generate_at,generate_class_at,description,tree_table,base_table_id,record_action_width,list_config,form_config,edit_in_modal
+    </sql>
+</mapper>

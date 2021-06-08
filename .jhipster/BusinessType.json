@@ -1,0 +1,39 @@
+{
+  "name": "BusinessType",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "名称"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "javadoc": "代码"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "javadoc": "描述"
+    },
+    {
+      "fieldName": "icon",
+      "fieldType": "String",
+      "javadoc": "图标"
+    }
+  ],
+  "relationships": [],
+  "javadoc": "业务类型",
+  "entityTableName": "business_type",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "importData": true,
+  "clientRootFolder": "settings",
+  "changelogDate": "20210608092428"
+}

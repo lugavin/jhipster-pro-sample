@@ -1,0 +1,93 @@
+{
+  "name": "Department",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "名称"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "javadoc": "代码"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String",
+      "javadoc": "地址"
+    },
+    {
+      "fieldName": "phoneNum",
+      "fieldType": "String",
+      "javadoc": "联系电话"
+    },
+    {
+      "fieldName": "logo",
+      "fieldType": "String",
+      "javadoc": "logo地址"
+    },
+    {
+      "fieldName": "contact",
+      "fieldType": "String",
+      "javadoc": "联系人"
+    },
+    {
+      "fieldName": "createUserId",
+      "fieldType": "Long",
+      "javadoc": "创建用户 Id"
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "创建时间"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "department",
+      "otherEntityRelationshipName": "parent",
+      "javadoc": "下级部门",
+      "relationshipName": "children",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "authority",
+      "otherEntityRelationshipName": "departments",
+      "javadoc": "角色列表",
+      "relationshipName": "authorities",
+      "otherEntityField": "name",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "department",
+      "otherEntityRelationshipName": "children",
+      "javadoc": "上级",
+      "relationshipName": "parent",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "department",
+      "javadoc": "员工列表",
+      "relationshipName": "users",
+      "otherEntityField": "firstName"
+    }
+  ],
+  "javadoc": "部门",
+  "entityTableName": "department",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipFakeData": true,
+  "clientRootFolder": "settings",
+  "changelogDate": "20210608092426"
+}

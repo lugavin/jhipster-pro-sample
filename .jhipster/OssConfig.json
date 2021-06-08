@@ -1,0 +1,70 @@
+{
+  "name": "OssConfig",
+  "fields": [
+    {
+      "fieldName": "provider",
+      "fieldType": "OssProvider",
+      "javadoc": "提供商",
+      "fieldValues": "MINIO,QINIU,ALI,TENCENT,LOCAL"
+    },
+    {
+      "fieldName": "ossCode",
+      "fieldType": "String",
+      "javadoc": "资源编号"
+    },
+    {
+      "fieldName": "endpoint",
+      "fieldType": "String",
+      "javadoc": "资源地址"
+    },
+    {
+      "fieldName": "accessKey",
+      "fieldType": "String",
+      "javadoc": "accessKey"
+    },
+    {
+      "fieldName": "secretKey",
+      "fieldType": "String",
+      "javadoc": "secretKey"
+    },
+    {
+      "fieldName": "bucketName",
+      "fieldType": "String",
+      "javadoc": "空间名"
+    },
+    {
+      "fieldName": "appId",
+      "fieldType": "String",
+      "javadoc": "应用ID"
+    },
+    {
+      "fieldName": "region",
+      "fieldType": "String",
+      "javadoc": "地域简称"
+    },
+    {
+      "fieldName": "remark",
+      "fieldType": "String",
+      "javadoc": "备注"
+    },
+    {
+      "fieldName": "enabled",
+      "fieldType": "Boolean",
+      "javadoc": "启用"
+    }
+  ],
+  "relationships": [],
+  "javadoc": "对象存储配置",
+  "entityTableName": "oss_config",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipFakeData": true,
+  "clientRootFolder": "files",
+  "changelogDate": "20210608092421"
+}

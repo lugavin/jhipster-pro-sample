@@ -1,0 +1,33 @@
+id;text;i_18_n;group;link;external_link;target;icon;disabled;hide;hide_in_breadcrumb;shortcut;shortcut_root;reuse;code;description;type;order;api_permission_codes;parent_id
+1;主导航;;true;/;;TOP;;false;false;true;false;false;false;index;;MENU;1;;NULL
+2;仪表盘;;false;/dashboard;;PARENT;anticon anticon-dashboard;false;false;false;false;false;false;dashboard;;MENU;1;;1
+3;分析页;;false;/dashboard/analysis;;BLANK;;false;false;false;false;false;false;Analysis;;MENU;0;;2
+77;设置;;true;/settings;;NULL;;false;false;true;false;false;false;;;MENU;1;;NULL
+87;业务;;true;/entities;;NULL;;false;false;true;false;false;false;business;;MENU;1;;NULL
+97;开发参考;;false;/development;;SELF;anticon anticon-code;false;false;false;false;false;false;;;MENU;1;;77
+99;API;;false;/admin/docs;;SELF;;false;false;false;false;false;false;admin-docs;;MENU;1;;97
+105;系统设置;;false;/settings/system;;NULL;anticon anticon-setting;false;false;false;false;false;false;;;MENU;1;;87
+106;用户管理;;false;/entities/system/user;;SELF;;false;false;false;false;false;false;system-user-list;;MENU;1;;105
+107;缓存管理;;false;/entities/system/cache-manage;;SELF;;false;false;false;false;false;false;system-cache-manage;;MENU;1;;105
+108;数据可视;;false;/entities/report;;SELF;anticon anticon-file-text;false;false;false;false;false;false;;;MENU;1;;87
+109;角色管理;;false;/entities/system/authority;;SELF;;false;false;false;false;false;false;system-authority-list;;MENU;1;;105
+110;文件管理;;false;/entities/files;;SELF;anticon anticon-file;false;false;false;false;false;false;;;MENU;1;;87
+111;对象存储配置;;false;/entities/files/oss-config;;SELF;;false;false;false;false;false;false;files-oss-config-list;;MENU;1;;110
+112;API权限;;false;/entities/system/api-permission;;SELF;;false;false;false;false;false;false;system-api-permission-list;;MENU;1;;105
+113;上传图片;;false;/entities/files/upload-image;;SELF;;false;false;false;false;false;false;files-upload-image-list;;MENU;1;;110
+114;短信配置;;false;/entities/files/sms-config;;SELF;;false;false;false;false;false;false;files-sms-config-list;;MENU;1;;110
+115;报表存储;;false;/entities/report/u-report-file;;SELF;;false;false;false;false;false;false;report-u-report-file-list;;MENU;1;;108
+116;配置管理;;false;/entities/settings;;SELF;anticon anticon-database;false;false;false;false;false;false;;;MENU;1;;87
+117;部门;;false;/entities/settings/department;;SELF;;false;false;false;false;false;false;settings-department-list;;MENU;1;;116
+118;统计Api;;false;/entities/report/statistics-api;;SELF;;false;false;false;false;false;false;report-statistics-api-list;;MENU;1;;108
+119;业务类型;;false;/entities/settings/business-type;;SELF;;false;false;false;false;false;false;settings-business-type-list;;MENU;1;;116
+120;可视权限;;false;/entities/system/view-permission;;SELF;;false;false;false;false;false;false;system-view-permission-list;;MENU;1;;105
+121;行政区划;;false;/entities/settings/administrative-division;;SELF;;false;false;false;false;false;false;settings-administrative-division-list;;MENU;1;;116
+122;模型管理;;false;/entities/modelConfig;;SELF;anticon anticon-box-plot;false;false;false;false;false;false;;;MENU;1;;87
+123;关系模型;;false;/entities/modelConfig/common-table;;SELF;;false;false;false;false;false;false;modelConfig-common-table-list;;MENU;1;;122
+124;资源分类;;false;/entities/files/resource-category;;SELF;;false;false;false;false;false;false;files-resource-category-list;;MENU;1;;110
+125;上传文件;;false;/entities/files/upload-file;;SELF;;false;false;false;false;false;false;files-upload-file-list;;MENU;1;;110
+126;岗位;;false;/entities/settings/position;;SELF;;false;false;false;false;false;false;settings-position-list;;MENU;1;;116
+127;数据字典;;false;/entities/settings/data-dictionary;;SELF;;false;false;false;false;false;false;settings-data-dictionary-list;;MENU;1;;116
+128;通用条件;;false;/entities/report/common-condition;;SELF;;false;false;false;false;false;false;report-common-condition-list;;MENU;1;;108
+129;GPS信息;;false;/entities/settings/gps-info;;SELF;;false;false;false;false;false;false;settings-gps-info-list;;MENU;1;;116

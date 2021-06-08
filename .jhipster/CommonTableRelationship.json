@@ -1,0 +1,222 @@
+{
+  "name": "CommonTableRelationship",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "名称",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "relationshipType",
+      "fieldType": "RelationshipType",
+      "javadoc": "关系类型",
+      "fieldValues": "ONE_TO_MANY,MANY_TO_ONE,MANY_TO_MANY,ONE_TO_ONE",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "sourceType",
+      "fieldType": "SourceType",
+      "javadoc": "来源类型",
+      "fieldValues": "ENTITY,DATA_DICTIONARY,SERVICE_ENTITY",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "otherEntityField",
+      "fieldType": "String",
+      "javadoc": "关联表显示字段",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "otherEntityName",
+      "fieldType": "String",
+      "javadoc": "关联实体名称",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "relationshipName",
+      "fieldType": "String",
+      "javadoc": "关系属性名称",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "otherEntityRelationshipName",
+      "fieldType": "String",
+      "javadoc": "对方属性名称",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "columnWidth",
+      "fieldType": "Integer",
+      "javadoc": "列宽"
+    },
+    {
+      "fieldName": "order",
+      "fieldType": "Integer",
+      "javadoc": "显示顺序"
+    },
+    {
+      "fieldName": "fixed",
+      "fieldType": "FixedType",
+      "javadoc": "列固定",
+      "fieldValues": "LEFT,RIGHT"
+    },
+    {
+      "fieldName": "editInList",
+      "fieldType": "Boolean",
+      "javadoc": "行内编辑"
+    },
+    {
+      "fieldName": "enableFilter",
+      "fieldType": "Boolean",
+      "javadoc": "可过滤"
+    },
+    {
+      "fieldName": "hideInList",
+      "fieldType": "Boolean",
+      "javadoc": "列表隐藏"
+    },
+    {
+      "fieldName": "hideInForm",
+      "fieldType": "Boolean",
+      "javadoc": "表单隐藏"
+    },
+    {
+      "fieldName": "system",
+      "fieldType": "Boolean",
+      "javadoc": "系统定义"
+    },
+    {
+      "fieldName": "fontColor",
+      "fieldType": "String",
+      "javadoc": "字体颜色",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "80"
+    },
+    {
+      "fieldName": "backgroundColor",
+      "fieldType": "String",
+      "javadoc": "列背景色",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "80"
+    },
+    {
+      "fieldName": "help",
+      "fieldType": "String",
+      "javadoc": "详细字段说明",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "ownerSide",
+      "fieldType": "Boolean",
+      "javadoc": "是否维护端"
+    },
+    {
+      "fieldName": "dataName",
+      "fieldType": "String",
+      "javadoc": "数据源名称",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "webComponentType",
+      "fieldType": "String",
+      "javadoc": "Web控件类型",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "otherEntityIsTree",
+      "fieldType": "Boolean",
+      "javadoc": "是否树形实体"
+    },
+    {
+      "fieldName": "showInFilterTree",
+      "fieldType": "Boolean",
+      "javadoc": "显示在过滤树"
+    },
+    {
+      "fieldName": "dataDictionaryCode",
+      "fieldType": "String",
+      "javadoc": "字典表代码",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "clientReadOnly",
+      "fieldType": "Boolean",
+      "javadoc": "前端只读"
+    },
+    {
+      "fieldName": "endUsed",
+      "fieldType": "EndUsedType",
+      "javadoc": "前端用法",
+      "fieldValues": "FILE_URL,IMAGE_URL,VIDEO_URL,AUDIO_URL,EDITOR,CODE_EDITOR,SELECT,MODAL_SELECT,CHECKBOX,RADIO,RATE,SLIDER,SWITCH,TEXT_AREA,AVATAR"
+    },
+    {
+      "fieldName": "options",
+      "fieldType": "String",
+      "javadoc": "关系配置项",
+      "options": {
+        "endUsed": "codeEditor"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commonTable",
+      "otherEntityRelationshipName": "commonTableRelationship",
+      "javadoc": "关联实体",
+      "relationshipName": "relationEntity",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "dataDictionary",
+      "otherEntityRelationshipName": "commonTableRelationship",
+      "javadoc": "字典表节点",
+      "relationshipName": "dataDictionaryNode",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commonTable",
+      "otherEntityRelationshipName": "commonTableRelationship",
+      "javadoc": "元模型",
+      "relationshipName": "metaModel",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commonTable",
+      "otherEntityRelationshipName": "relationships",
+      "javadoc": "所属表 config: {\"showInOne\": true, \"additionalShowFields\": [\"entityName\", \"tableName\"]}",
+      "relationshipName": "commonTable",
+      "otherEntityField": "name"
+    }
+  ],
+  "javadoc": "模型关系",
+  "entityTableName": "common_table_relationship",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "importData": true,
+  "skipComponent": "repository-serviceClass",
+  "microServiceCore": true,
+  "skipMenu": true,
+  "extendData": true,
+  "clientRootFolder": "modelConfig",
+  "changelogDate": "20210608092429"
+}

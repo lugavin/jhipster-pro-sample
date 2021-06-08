@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gavin.myapp.repository.CommonTableFieldRepository">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gavin.myapp.domain.CommonTableField">
+        <id column="id" property="id"/>
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="entity_field_name" property="entityFieldName"/>
+        <result column="type" property="type"/>
+        <result column="table_column_name" property="tableColumnName"/>
+        <result column="column_width" property="columnWidth"/>
+        <result column="`order`" property="order"/>
+        <result column="edit_in_list" property="editInList"/>
+        <result column="hide_in_list" property="hideInList"/>
+        <result column="hide_in_form" property="hideInForm"/>
+        <result column="enable_filter" property="enableFilter"/>
+        <result column="validate_rules" property="validateRules"/>
+        <result column="show_in_filter_tree" property="showInFilterTree"/>
+        <result column="fixed" property="fixed"/>
+        <result column="sortable" property="sortable"/>
+        <result column="tree_indicator" property="treeIndicator"/>
+        <result column="client_read_only" property="clientReadOnly"/>
+        <result column="field_values" property="fieldValues"/>
+        <result column="not_null" property="notNull"/>
+        <result column="`system`" property="system"/>
+        <result column="help" property="help"/>
+        <result column="font_color" property="fontColor"/>
+        <result column="background_color" property="backgroundColor"/>
+        <result column="null_hide_in_form" property="nullHideInForm"/>
+        <result column="end_used" property="endUsed"/>
+        <result column="options" property="options"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,id,title,entity_field_name,type,table_column_name,column_width,`order`,edit_in_list,hide_in_list,hide_in_form,enable_filter,validate_rules,show_in_filter_tree,fixed,sortable,tree_indicator,client_read_only,field_values,not_null,`system`,help,font_color,background_color,null_hide_in_form,end_used,options
+    </sql>
+</mapper>

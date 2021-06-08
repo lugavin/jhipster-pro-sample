@@ -1,0 +1,77 @@
+{
+  "jhipsterApplicationApp": {
+    "modelConfigCommonTableField": {
+      "home": {
+        "title": "模型字段",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new 模型字段",
+        "createOrEditLabel": "Create or edit a 模型字段",
+        "notFound": "No 模型字段 found"
+      },
+      "created": "A new 模型字段 is created with identifier {{ param }}",
+      "updated": "A 模型字段 is updated with identifier {{ param }}",
+      "deleted": "A 模型字段 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete 模型字段 {{ id }}?"
+      },
+      "detail": {
+        "title": "模型字段"
+      },
+      "id": "ID",
+      "title": "Title",
+      "entityFieldName": "Entity Field Name",
+      "type": "Type",
+      "tableColumnName": "Table Column Name",
+      "columnWidth": "Column Width",
+      "order": "Order",
+      "editInList": "Edit In List",
+      "hideInList": "Hide In List",
+      "hideInForm": "Hide In Form",
+      "enableFilter": "Enable Filter",
+      "validateRules": "Validate Rules",
+      "showInFilterTree": "Show In Filter Tree",
+      "fixed": "Fixed",
+      "sortable": "Sortable",
+      "treeIndicator": "Tree Indicator",
+      "clientReadOnly": "Client Read Only",
+      "fieldValues": "Field Values",
+      "notNull": "Not Null",
+      "system": "System",
+      "help": "Help",
+      "fontColor": "Font Color",
+      "backgroundColor": "Background Color",
+      "nullHideInForm": "Null Hide In Form",
+      "endUsed": "End Used",
+      "options": "Options",
+      "metaModel": "元模型",
+      "commonTable": "所属表",
+      "help": {
+        "title": "标题",
+        "entityFieldName": "属性名称",
+        "type": "数据类型",
+        "tableColumnName": "字段名称",
+        "columnWidth": "列宽",
+        "order": "显示顺序",
+        "editInList": "行内编辑",
+        "hideInList": "列表隐藏",
+        "hideInForm": "表单隐藏",
+        "enableFilter": "可过滤",
+        "validateRules": "验证规则",
+        "showInFilterTree": "显示在过滤树",
+        "fixed": "列固定",
+        "sortable": "可排序",
+        "treeIndicator": "树形标识",
+        "clientReadOnly": "前端只读",
+        "fieldValues": "值范围",
+        "notNull": "必填",
+        "system": "系统字段",
+        "help": "字段说明",
+        "fontColor": "字体颜色",
+        "backgroundColor": "列背景色",
+        "nullHideInForm": "空值隐藏",
+        "endUsed": "前端用法",
+        "options": "关系配置项"
+      }
+    }
+  }
+}

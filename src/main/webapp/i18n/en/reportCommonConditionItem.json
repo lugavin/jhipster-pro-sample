@@ -1,0 +1,40 @@
+{
+  "jhipsterApplicationApp": {
+    "reportCommonConditionItem": {
+      "home": {
+        "title": "通用条件条目",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new 通用条件条目",
+        "createOrEditLabel": "Create or edit a 通用条件条目",
+        "notFound": "No 通用条件条目 found"
+      },
+      "created": "A new 通用条件条目 is created with identifier {{ param }}",
+      "updated": "A 通用条件条目 is updated with identifier {{ param }}",
+      "deleted": "A 通用条件条目 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete 通用条件条目 {{ id }}?"
+      },
+      "detail": {
+        "title": "通用条件条目"
+      },
+      "id": "ID",
+      "prefix": "Prefix",
+      "fieldName": "Field Name",
+      "fieldType": "Field Type",
+      "operator": "Operator",
+      "value": "Value",
+      "suffix": "Suffix",
+      "order": "Order",
+      "commonCondition": "查询",
+      "help": {
+        "prefix": "前置符号",
+        "fieldName": "字段名称",
+        "fieldType": "字段类型",
+        "operator": "运算符号",
+        "value": "比较值",
+        "suffix": "后缀",
+        "order": "顺序"
+      }
+    }
+  }
+}

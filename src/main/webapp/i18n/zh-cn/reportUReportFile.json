@@ -1,0 +1,34 @@
+{
+  "jhipsterApplicationApp": {
+    "reportUReportFile": {
+      "home": {
+        "title": "报表存储",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 报表存储",
+        "createOrEditLabel": "创建或编辑 报表存储",
+        "notFound": "No 报表存储 found"
+      },
+      "created": "报表存储 {{ param }} 创建成功",
+      "updated": "报表存储 {{ param }} 更新成功",
+      "deleted": "报表存储 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 报表存储 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "报表存储"
+      },
+      "id": "ID",
+      "name": "Name",
+      "content": "Content",
+      "createAt": "Create At",
+      "updateAt": "Update At",
+      "commonTable": "关联表",
+      "help": {
+        "name": "名称",
+        "content": "内容",
+        "createAt": "创建时间",
+        "updateAt": "更新时间"
+      }
+    }
+  }
+}

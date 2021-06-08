@@ -1,0 +1,45 @@
+.editable-cell{
+  min-width:100px;
+  margin: 0 auto;
+  min-height:30px;
+  display: inline-block;
+}
+.data-grid {
+  .ant-table-small > .ant-table-content > .ant-table-body{
+    margin: 0;
+      &>table
+      > .ant-table-thead
+      > tr
+      > th {
+      background: #f1f1f1;
+      }
+  }
+/*  /deep/ .ant-table-tbody > tr.active {
+    background: rgba(111, 185, 255, 0.3) !important;
+    td {
+      background: rgba(111, 185, 255, 0.3) !important;
+    }
+  }*/
+  .text-cls{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+.table-cell-text {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.resize-table-th {
+  position: relative;
+  .table-draggable-handle {
+    height: 100% !important;
+    bottom: 0;
+    left: auto !important;
+    right: -5px;
+    cursor: col-resize;
+    touch-action: none;
+  }
+}

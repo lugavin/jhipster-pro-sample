@@ -1,0 +1,11 @@
+{
+  "jhipsterApplicationApp": {
+    "SmsProvider": {
+      "null": "",
+      "YUNPIAN": "YUNPIAN",
+      "QINIU": "QINIU",
+      "ALI": "ALI",
+      "TENCENT": "TENCENT"
+    }
+  }
+}

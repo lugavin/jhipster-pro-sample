@@ -1,0 +1,45 @@
+{
+  "jhipsterApplicationApp": {
+    "filesOssConfig": {
+      "home": {
+        "title": "对象存储配置",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 对象存储配置",
+        "createOrEditLabel": "创建或编辑 对象存储配置",
+        "notFound": "No 对象存储配置 found"
+      },
+      "created": "对象存储配置 {{ param }} 创建成功",
+      "updated": "对象存储配置 {{ param }} 更新成功",
+      "deleted": "对象存储配置 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 对象存储配置 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "对象存储配置"
+      },
+      "id": "ID",
+      "provider": "Provider",
+      "ossCode": "Oss Code",
+      "endpoint": "Endpoint",
+      "accessKey": "Access Key",
+      "secretKey": "Secret Key",
+      "bucketName": "Bucket Name",
+      "appId": "App Id",
+      "region": "Region",
+      "remark": "Remark",
+      "enabled": "Enabled",
+      "help": {
+        "provider": "提供商",
+        "ossCode": "资源编号",
+        "endpoint": "资源地址",
+        "accessKey": "accessKey",
+        "secretKey": "secretKey",
+        "bucketName": "空间名",
+        "appId": "应用ID",
+        "region": "地域简称",
+        "remark": "备注",
+        "enabled": "启用"
+      }
+    }
+  }
+}

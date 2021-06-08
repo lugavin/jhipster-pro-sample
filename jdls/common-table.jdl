@@ -1,0 +1,189 @@
+/** 关系模型 */
+@skipComponent(repository-serviceClass-restController-listPage-listComponent-clientService-updateComponent-clientRoute)
+@importData
+@extendData
+@microServiceCore
+entity CommonTable {
+	name String required maxlength(80)/** 名称 */
+	entityName String required maxlength(80)/** 实体名称 */
+	tableName String required maxlength(80)/** 数据库表名 */
+	system Boolean /** 系统表 */
+	clazzName String required maxlength(80)/** 类名 */
+	@fieldConfig(hideInList-hideInForm)
+	generated Boolean /** 是否生成 */
+    creatAt ZonedDateTime /** 创建时间 */
+    generateAt ZonedDateTime /** 生成表时间 */
+    generateClassAt ZonedDateTime /** 编译时间 */
+	@fieldConfig(hideInList)
+	description String maxlength(200) /** 表说明 */
+	treeTable Boolean /** 树形表 */
+	baseTableId Long /** 来源Id */
+	recordActionWidth Integer /** 操作栏宽度 */
+	@fieldConfig(hideInList-hideInForm)
+	listConfig TextBlob /** 前端列表配置 */
+	@fieldConfig(hideInList-hideInForm)
+	formConfig TextBlob /** 前端表单配置 */
+	editInModal Boolean /** 弹窗编辑 */
+	//
+	//
+}
+
+
+/** 模型字段 */
+@skipMenu
+@skipComponent(repository-serviceClass)
+@importData
+@extendData
+@microServiceCore
+entity CommonTableField {
+	title String required maxlength(100)/** 标题 */
+	entityFieldName String required maxlength(100)/** 属性名称 */
+	type CommonFieldType required /** 数据类型 */
+    tableColumnName String required maxlength(100)/** 字段名称 */
+	columnWidth Integer min(0) max(1200)/** 列宽 */
+	order Integer /** 显示顺序 */
+	editInList Boolean /** 行内编辑 */
+	hideInList Boolean /** 列表隐藏 */
+	hideInForm Boolean /** 表单隐藏 */
+	enableFilter Boolean /** 可过滤 */
+	validateRules String maxlength(800)/** 验证规则 */
+	showInFilterTree Boolean /** 显示在过滤树 */
+	fixed FixedType /** 列固定 */
+	sortable Boolean /** 可排序 */
+	treeIndicator Boolean /** 树形标识 */
+	clientReadOnly Boolean /** 前端只读 */
+	fieldValues String  maxlength(2000)/** 值范围 */
+	notNull Boolean /** 必填 */
+	system Boolean /** 系统字段 */
+	@fieldConfig(hideInList-hideInForm)
+	help String maxlength(200)/** 字段说明 */
+	@fieldConfig(hideInList-hideInForm)
+	fontColor String maxlength(80)/** 字体颜色 */
+	@fieldConfig(hideInList-hideInForm)
+	backgroundColor String maxlength(80)/** 列背景色 */
+	nullHideInForm Boolean /** 空值隐藏 */
+	endUsed EndUsedType /** 前端用法 */
+	@endUsed(codeEditor)
+	options String /** 关系配置项 */
+}
+
+enum EndUsedType {
+	FILE_URL, IMAGE_URL, VIDEO_URL, AUDIO_URL, EDITOR, CODE_EDITOR, SELECT, MODAL_SELECT, CHECKBOX, RADIO, RATE, SLIDER, SWITCH, TEXT_AREA, AVATAR
+}
+/** 模型关系 */
+@skipMenu
+@importData
+@microServiceCore
+@extendData
+@skipComponent(repository-serviceClass)
+entity CommonTableRelationship {
+	name String required maxlength(100) /** 名称 */
+	relationshipType RelationshipType required /** 关系类型 */
+	sourceType SourceType required /** 来源类型 */
+	otherEntityField String maxlength(100) /** 关联表显示字段 */
+	otherEntityName String required maxlength(100) /** 关联实体名称 */
+	relationshipName String required maxlength(100) /** 关系属性名称 */
+	otherEntityRelationshipName String maxlength(100) /** 对方属性名称 */
+	columnWidth Integer /** 列宽 */
+	order Integer /** 显示顺序 */
+	fixed FixedType /** 列固定 */
+	editInList Boolean /** 行内编辑 */
+	enableFilter Boolean /** 可过滤 */
+	hideInList Boolean /** 列表隐藏 */
+	hideInForm Boolean /** 表单隐藏 */
+	system Boolean /** 系统定义 */
+	fontColor String maxlength(80) /** 字体颜色 */
+	backgroundColor String maxlength(80) /** 列背景色 */
+	help String maxlength(200) /** 详细字段说明 */
+	ownerSide Boolean /** 是否维护端 */
+	dataName String required maxlength(100) /** 数据源名称 */
+	webComponentType String maxlength(100) /** Web控件类型 */
+	otherEntityIsTree Boolean /** 是否树形实体 */
+	showInFilterTree Boolean /** 显示在过滤树 */
+	dataDictionaryCode String maxlength(100) /** 字典表代码 */
+	clientReadOnly Boolean /** 前端只读 */
+	endUsed EndUsedType /** 前端用法 */
+	@endUsed(codeEditor)
+	options String /** 关系配置项 */
+}
+
+enum FixedType {
+	LEFT, RIGHT
+}
+//
+relationship ManyToOne {
+	/** 关联实体 */
+	CommonTableRelationship{relationEntity(name)}
+	to
+	CommonTable
+
+	/** 字典表节点 */
+	CommonTableRelationship{dataDictionaryNode(name)}
+	to
+	DataDictionary
+
+
+	/** 元模型 */
+	CommonTableRelationship{metaModel(name)}
+	to
+	CommonTable
+
+	/** 元模型 */
+	CommonTableField{metaModel(name)}
+	to
+	CommonTable
+
+	/** 元模型 */
+	CommonTable{metaModel(name)}
+	to
+	CommonTable
+
+	//
+	/** 创建人 config: {"createdBy": true} */
+    CommonTable{creator(login)}
+    to
+    User
+
+	//
+	//
+
+	/** 业务类型 */
+    CommonTable{businessType(name)}
+    to
+    BusinessType
+	//
+}
+relationship OneToMany {
+	/** 字段 config: {"showInOne": true, "orderBy": "order asc"} */
+	CommonTable{commonTableFields(title)}
+	to
+	/** 所属表 config: {"showInOne": true, "additionalShowFields": ["tableName"]}*/
+	CommonTableField{commonTable(name)}
+
+	/** 关系 config: {"showInOne": true, "orderBy": "order asc"} */
+	CommonTable{relationships(name)}
+	to
+	/** 所属表 config: {"showInOne": true, "additionalShowFields": ["entityName", "tableName"]} */
+	CommonTableRelationship{commonTable(name)}
+
+}
+/** 来源，实体或数据字典 */
+enum SourceType {
+	ENTITY, DATA_DICTIONARY, SERVICE_ENTITY
+}
+enum RelationshipType {
+	ONE_TO_MANY, MANY_TO_ONE, MANY_TO_MANY, ONE_TO_ONE
+}
+/**
+ * 字段类型
+ *
+ */
+enum CommonFieldType {
+	INTEGER,LONG,BOOLEAN,STRING,FLOAT,DOUBLE,ZONED_DATE_TIME,LOCATE_DATE,BIG_DECIMAL,TEXTBLOB,IMAGEBLOB,ENUM,UPLOAD_IMAGE,UPLOAD_FILE,ENTITY,RADIO,MULTI_SELECT,DATA_DICTIONARY,UUID
+}
+
+filter *
+service all with serviceClass
+clientRootFolder CommonTable, CommonTableField, CommonTableRelationship with modelConfig
+dto CommonTable, CommonTableField, CommonTableRelationship with mapstruct
+//paginate CommonTable, CommonTableField, CommonTableRelationship with pagination

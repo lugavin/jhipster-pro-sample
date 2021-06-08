@@ -1,0 +1,53 @@
+{
+  "jhipsterApplicationApp": {
+    "filesUploadImage": {
+      "home": {
+        "title": "上传图片",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 上传图片",
+        "createOrEditLabel": "创建或编辑 上传图片",
+        "notFound": "No 上传图片 found"
+      },
+      "created": "上传图片 {{ param }} 创建成功",
+      "updated": "上传图片 {{ param }} 更新成功",
+      "deleted": "上传图片 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 上传图片 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "上传图片"
+      },
+      "id": "ID",
+      "fullName": "Full Name",
+      "name": "Name",
+      "ext": "Ext",
+      "type": "Type",
+      "url": "Url",
+      "path": "Path",
+      "folder": "Folder",
+      "entityName": "Entity Name",
+      "createAt": "Create At",
+      "fileSize": "File Size",
+      "smartUrl": "Smart Url",
+      "mediumUrl": "Medium Url",
+      "referenceCount": "Reference Count",
+      "user": "上传者",
+      "category": "所属分类",
+      "help": {
+        "fullName": "完整文件名，不含路径",
+        "name": "文件名，不含扩展名",
+        "ext": "扩展名",
+        "type": "文件类型",
+        "url": "Web Url地址",
+        "path": "本地路径",
+        "folder": "本地存储目录",
+        "entityName": "使用实体名称",
+        "createAt": "创建时间",
+        "fileSize": "文件大小",
+        "smartUrl": "小图Url",
+        "mediumUrl": "中等图Url",
+        "referenceCount": "文件被引用次数"
+      }
+    }
+  }
+}

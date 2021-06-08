@@ -1,0 +1,33 @@
+{
+  "jhipsterApplicationApp": {
+    "reportCommonCondition": {
+      "home": {
+        "title": "通用条件",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 通用条件",
+        "createOrEditLabel": "创建或编辑 通用条件",
+        "notFound": "No 通用条件 found"
+      },
+      "created": "通用条件 {{ param }} 创建成功",
+      "updated": "通用条件 {{ param }} 更新成功",
+      "deleted": "通用条件 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 通用条件 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "通用条件"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "lastModifiedTime": "Last Modified Time",
+      "items": "条件项目",
+      "commonTable": "所属模型",
+      "help": {
+        "name": "名称",
+        "description": "描述",
+        "lastModifiedTime": "最后更新时间"
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "ResourceCategory",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "javadoc": "标题",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "javadoc": "代码",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "sort",
+      "fieldType": "Integer",
+      "javadoc": "排序"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "uploadFile",
+      "otherEntityRelationshipName": "category",
+      "javadoc": "文件列表",
+      "relationshipName": "files",
+      "otherEntityField": "url"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "resourceCategory",
+      "otherEntityRelationshipName": "parent",
+      "javadoc": "下级列表",
+      "relationshipName": "children",
+      "otherEntityField": "title"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "uploadImage",
+      "otherEntityRelationshipName": "category",
+      "javadoc": "图片列表",
+      "relationshipName": "images",
+      "otherEntityField": "url"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "resourceCategory",
+      "otherEntityRelationshipName": "children",
+      "javadoc": "上级",
+      "relationshipName": "parent",
+      "otherEntityField": "title"
+    }
+  ],
+  "javadoc": "资源分类",
+  "entityTableName": "resource_category",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipFakeData": true,
+  "clientRootFolder": "files",
+  "changelogDate": "20210608092434"
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity CommonConditionItem.
+    -->
+    
+    <changeSet id="20210608092431-1" author="jhipster">
+        <createTable tableName="common_condition_item" remarks="通用条件条目">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="prefix" type="varchar(255)" remarks="前置符号">
+                <constraints nullable="true" />
+            </column>
+            <column name="field_name" type="varchar(255)" remarks="字段名称">
+                <constraints nullable="true" />
+            </column>
+            <column name="field_type" type="varchar(255)" remarks="字段类型">
+                <constraints nullable="true" />
+            </column>
+            <column name="operator" type="varchar(255)" remarks="运算符号">
+                <constraints nullable="true" />
+            </column>
+            <column name="value" type="varchar(255)" remarks="比较值">
+                <constraints nullable="true" />
+            </column>
+            <column name="suffix" type="varchar(255)" remarks="后缀">
+                <constraints nullable="true" />
+            </column>
+            <column name="order" type="integer" remarks="顺序">
+                <constraints nullable="true" />
+            </column>
+            <column name="common_condition_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here-->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+</databaseChangeLog>

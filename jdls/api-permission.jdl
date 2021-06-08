@@ -1,0 +1,49 @@
+/**
+ *API权限
+ *菜单或按钮下有相关的api权限
+ */
+@skipFakeData
+@microServiceCore
+@skipComponent(repository-serviceClass-restController-listPage-listComponent-clientService)
+entity ApiPermission {
+    serviceName String /** 服务名称 */
+    name String /** 权限名称 */
+    code String /** 权限代码(ROLE_开头) */
+    description String /** 权限描述 */
+    type ApiPermissionType /** 类型 */
+	method String /** 请求类型 */
+	url String /** url 地址 */
+}
+
+relationship OneToMany {
+
+	/** 子节点 */
+    ApiPermission{children(name)}
+	to
+	/** 上级 */
+    ApiPermission{parent(name)}
+
+}
+
+//
+relationship ManyToMany {
+    /** Api权限 */
+    Authority{apiPermissions(name)}
+    to
+    /** 角色列表 */
+    ApiPermission{authorities(name)}
+
+}
+//
+
+/** Api权限类型 */
+enum ApiPermissionType {
+    BUSINESS, API, ENTITY, MICRO_SERVICE
+}
+
+service all with serviceClass
+filter *
+clientRootFolder ApiPermission with system
+dto ApiPermission with mapstruct
+paginate ApiPermission with pagination
+//

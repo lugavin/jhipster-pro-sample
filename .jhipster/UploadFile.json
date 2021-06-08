@@ -1,0 +1,92 @@
+{
+  "name": "UploadFile",
+  "fields": [
+    {
+      "fieldName": "fullName",
+      "fieldType": "String",
+      "javadoc": "完整文件名\\n不含路径"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "文件名\\n不含扩展名"
+    },
+    {
+      "fieldName": "ext",
+      "fieldType": "String",
+      "javadoc": "扩展名"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String",
+      "javadoc": "文件类型"
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String",
+      "javadoc": "Url地址"
+    },
+    {
+      "fieldName": "path",
+      "fieldType": "String",
+      "javadoc": "本地路径"
+    },
+    {
+      "fieldName": "folder",
+      "fieldType": "String",
+      "javadoc": "存储目录"
+    },
+    {
+      "fieldName": "entityName",
+      "fieldType": "String",
+      "javadoc": "实体名称"
+    },
+    {
+      "fieldName": "createAt",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "创建时间"
+    },
+    {
+      "fieldName": "fileSize",
+      "fieldType": "Long",
+      "javadoc": "文件大小"
+    },
+    {
+      "fieldName": "referenceCount",
+      "fieldType": "Long",
+      "javadoc": "被引次数"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "uploadFile",
+      "javadoc": "上传者",
+      "relationshipName": "user",
+      "otherEntityField": "login"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "resourceCategory",
+      "otherEntityRelationshipName": "files",
+      "javadoc": "所属分类",
+      "relationshipName": "category",
+      "otherEntityField": "title"
+    }
+  ],
+  "javadoc": "上传文件",
+  "entityTableName": "upload_file",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipFakeData": true,
+  "skipComponent": "dto-serviceClass-restController",
+  "clientRootFolder": "files",
+  "changelogDate": "20210608092435"
+}

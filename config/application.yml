@@ -1,0 +1,5 @@
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/certificatecheck?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
+#    username: root
+#    password:

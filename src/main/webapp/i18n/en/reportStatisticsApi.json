@@ -1,0 +1,48 @@
+{
+  "jhipsterApplicationApp": {
+    "reportStatisticsApi": {
+      "home": {
+        "title": "统计Api",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new 统计Api",
+        "createOrEditLabel": "Create or edit a 统计Api",
+        "notFound": "No 统计Api found"
+      },
+      "created": "A new 统计Api is created with identifier {{ param }}",
+      "updated": "A 统计Api is updated with identifier {{ param }}",
+      "deleted": "A 统计Api is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete 统计Api {{ id }}?"
+      },
+      "detail": {
+        "title": "统计Api"
+      },
+      "id": "ID",
+      "title": "Title",
+      "apiKey": "Api Key",
+      "createAt": "Create At",
+      "updateAt": "Update At",
+      "sourceType": "Source Type",
+      "apiBody": "Api Body",
+      "result": "Result",
+      "updateInterval": "Update Interval",
+      "lastSQLRunTime": "Last SQL Run Time",
+      "enable": "Enable",
+      "commonTable": "所属表",
+      "creator": "创建人",
+      "modifier": "修改人",
+      "help": {
+        "title": "标题",
+        "apiKey": "ApiKey",
+        "createAt": "创建时间",
+        "updateAt": "更新时间",
+        "sourceType": "来源类型",
+        "apiBody": "主体内容",
+        "result": "可能存放的结果",
+        "updateInterval": "更新间隔(秒)",
+        "lastSQLRunTime": "最新运行时间",
+        "enable": "是否可用"
+      }
+    }
+  }
+}

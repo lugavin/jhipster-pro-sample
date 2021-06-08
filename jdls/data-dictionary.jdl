@@ -1,0 +1,72 @@
+/**
+ * 数据字典
+ */
+@microServiceCore
+@skipFakeData
+entity DataDictionary {
+	name String /** 名称 */
+	code String /** 代码 */
+	description String /** 描述 */
+	fontColor String /** 字体颜色 */
+	backgroundColor String /** 背景颜色 */
+}
+
+/**
+ * GPS信息
+ */
+@microServiceCore
+entity GpsInfo {
+	type GpsType /** gps坐标类型 */
+	latitude Double /** 纬度 */
+	longitude Double /** 经度 */
+	address String /** 地址描述 */
+}
+/**
+ * 行政区划
+ */
+@microServiceCore
+entity AdministrativeDivision {
+	name String /** 名称 */
+	areaCode String /** 地区代码 */
+	cityCode String /** 城市代码 */
+	mergerName String /** 全名 */
+	shortName String /** 短名称 */
+	zipCode String /** 邮政编码 */
+	level Integer /** 行政区域等级（0: 省级 1:市级 2:县级 3:镇级 4:乡村级） */
+	lng Double /** 经度 */
+	lat Double /** 纬度 */
+}
+enum GpsType {
+	BAIDU,GOOGLE_MAP,GOOGLE_EART,AMAP
+}
+
+relationship OneToMany {
+	/**
+	 * 子节点
+	 */
+	DataDictionary{children(name)}
+	to
+	/**
+	 * 上级节点
+	 */
+	DataDictionary{parent(name)}
+
+	/**
+	 * 子节点
+	 */
+	AdministrativeDivision{children(name)}
+	to
+	/**
+	 * 上级节点
+	 */
+	AdministrativeDivision{parent(name)}
+
+}
+
+
+service all with serviceClass
+filter *
+dto DataDictionary, GpsInfo, AdministrativeDivision with mapstruct
+paginate DataDictionary, GpsInfo, AdministrativeDivision with pagination
+clientRootFolder DataDictionary, GpsInfo, AdministrativeDivision with settings
+//

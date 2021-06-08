@@ -1,0 +1,131 @@
+/** 资源分类 */
+@skipFakeData
+entity ResourceCategory {
+    title String maxlength(40) /** 标题 */
+    code String maxlength(20) /** 代码 */
+    sort Integer /** 排序 */
+}
+/** 上传文件 */
+@skipFakeData
+@skipComponent(dto-serviceClass-restController)
+entity UploadFile {
+    /**
+     * 完整文件名
+     * 不含路径
+     */
+    fullName String
+    /** 文件名
+     * 不含扩展名
+     */
+    name String
+    ext String /** 扩展名 */
+    type String /** 文件类型 */
+    url String /** Url地址 */
+    path String /** 本地路径 */
+    folder String /** 存储目录 */
+    entityName String /** 实体名称 */
+    createAt ZonedDateTime /** 创建时间 */
+    fileSize Long /** 文件大小 */
+    referenceCount Long /** 被引次数 */
+}
+/** 上传图片 */
+@skipComponent(dto-serviceClass-restController)
+@skipFakeData
+entity UploadImage {
+    fullName String /** 完整文件名，不含路径 */
+    name String /** 文件名，不含扩展名 */
+    ext String /** 扩展名 */
+    type String /** 文件类型 */
+    url String /** Web Url地址 */
+    path String /** 本地路径 */
+    folder String /** 本地存储目录 */
+    entityName String /** 使用实体名称 */
+    createAt ZonedDateTime /** 创建时间 */
+    fileSize Long /** 文件大小 */
+    smartUrl String /** 小图Url */
+    mediumUrl String /** 中等图Url */
+    referenceCount Long /** 文件被引用次数 */
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+	/** 上传者 */
+    UploadFile{user(login)}
+     to
+    User
+
+    /** 上传者 */
+    UploadImage{user(login)}
+     to
+    User
+}
+
+relationship OneToMany {
+    /** 文件列表 */
+    ResourceCategory{files(url)}
+    to
+    /** 所属分类 */
+    UploadFile{category(title)}
+
+    /** 下级列表 */
+    ResourceCategory{children(title)}
+    to
+    /** 上级 */
+    ResourceCategory{parent(title)}
+
+    /** 图片列表 */
+    ResourceCategory{images(url)}
+    to
+    /** 所属分类 */
+    UploadImage{category(title)}
+}
+
+/**
+ * 短信配置
+ */
+@skipFakeData
+entity SmsConfig {
+    provider SmsProvider /** 提供商 */
+    smsCode String /** 资源编号 */
+    templateId String /** 模板ID */
+    accessKey String /** accessKey */
+    secretKey String /** secretKey */
+    regionId String /** regionId */
+    signName String /** 短信签名 */
+    remark String /** 备注 */
+    enabled Boolean /** 启用 */
+}
+
+/**
+ * 对象存储配置
+ */
+@skipFakeData
+entity OssConfig {
+    provider OssProvider /** 提供商 */
+    ossCode String /** 资源编号 */
+    endpoint String /** 资源地址 */
+    accessKey String /** accessKey */
+    secretKey String /** secretKey */
+    bucketName String /** 空间名 */
+    appId String /** 应用ID */
+    region String /** 地域简称 */
+    remark String /** 备注 */
+    enabled Boolean /** 启用 */
+}
+
+enum OssProvider {
+    MINIO, QINIU, ALI, TENCENT, LOCAL
+}
+
+enum SmsProvider {
+    YUNPIAN, QINIU, ALI, TENCENT
+}
+
+service all with serviceClass
+filter *
+dto UploadFile, UploadImage, ResourceCategory, OssConfig, SmsConfig with mapstruct
+paginate UploadFile, UploadImage, ResourceCategory, OssConfig, SmsConfig with pagination
+clientRootFolder UploadFile, UploadImage, ResourceCategory, OssConfig, SmsConfig with files
+//

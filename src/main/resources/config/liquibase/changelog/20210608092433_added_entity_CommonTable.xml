@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity CommonTable.
+    -->
+    
+    <changeSet id="20210608092433-1" author="jhipster">
+        <createTable tableName="common_table" remarks="关系模型">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(80)" remarks="名称">
+                <constraints nullable="false" />
+            </column>
+            <column name="entity_name" type="varchar(80)" remarks="实体名称">
+                <constraints nullable="false" />
+            </column>
+            <column name="table_name" type="varchar(80)" remarks="数据库表名">
+                <constraints nullable="false" />
+            </column>
+            <column name="system" type="boolean" remarks="系统表">
+                <constraints nullable="true" />
+            </column>
+            <column name="clazz_name" type="varchar(80)" remarks="类名">
+                <constraints nullable="false" />
+            </column>
+            <column name="generated" type="boolean" remarks="是否生成">
+                <constraints nullable="true" />
+            </column>
+            <column name="creat_at" type="${datetimeType}" remarks="创建时间">
+                <constraints nullable="true" />
+            </column>
+            <column name="generate_at" type="${datetimeType}" remarks="生成表时间">
+                <constraints nullable="true" />
+            </column>
+            <column name="generate_class_at" type="${datetimeType}" remarks="编译时间">
+                <constraints nullable="true" />
+            </column>
+            <column name="description" type="varchar(200)" remarks="表说明">
+                <constraints nullable="true" />
+            </column>
+            <column name="tree_table" type="boolean" remarks="树形表">
+                <constraints nullable="true" />
+            </column>
+            <column name="base_table_id" type="bigint" remarks="来源Id">
+                <constraints nullable="true" />
+            </column>
+            <column name="record_action_width" type="integer" remarks="操作栏宽度">
+                <constraints nullable="true" />
+            </column>
+            <column name="list_config" type="${clobType}" remarks="前端列表配置">
+                <constraints nullable="true" />
+            </column>
+            <column name="form_config" type="${clobType}" remarks="前端表单配置">
+                <constraints nullable="true" />
+            </column>
+            <column name="edit_in_modal" type="boolean" remarks="弹窗编辑">
+                <constraints nullable="true" />
+            </column>
+            <column name="meta_model_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="creator_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_type_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here-->
+        </createTable>
+            <dropDefaultValue tableName="common_table" columnName="creat_at" columnDataType="${datetimeType}"/>
+            <dropDefaultValue tableName="common_table" columnName="generate_at" columnDataType="${datetimeType}"/>
+            <dropDefaultValue tableName="common_table" columnName="generate_class_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20210608092433-1-data" author="jhipster">
+        <loadData
+                  file="config/liquibase/data/common_table.csv"
+                  separator=";"
+                  tableName="common_table">
+            <column name="id" type="numeric"/>
+            <column name="name" type="string"/>
+            <column name="entity_name" type="string"/>
+            <column name="table_name" type="string"/>
+            <column name="system" type="boolean"/>
+            <column name="clazz_name" type="string"/>
+            <column name="generated" type="boolean"/>
+            <column name="creat_at" type="${datetimeType}"/>
+            <column name="generate_at" type="${datetimeType}"/>
+            <column name="generate_class_at" type="${datetimeType}"/>
+            <column name="description" type="string"/>
+            <column name="tree_table" type="boolean"/>
+            <column name="base_table_id" type="numeric"/>
+            <column name="record_action_width" type="numeric"/>
+            <column name="list_config" type="clob"/>
+            <column name="form_config" type="clob"/>
+            <column name="edit_in_modal" type="boolean"/>
+            <column name="business_type_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

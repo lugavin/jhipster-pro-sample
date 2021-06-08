@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity SmsConfig.
+    -->
+    
+    <changeSet id="20210608092424-1" author="jhipster">
+        <createTable tableName="sms_config" remarks="短信配置">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="provider" type="varchar(255)" remarks="提供商">
+                <constraints nullable="true" />
+            </column>
+            <column name="sms_code" type="varchar(255)" remarks="资源编号">
+                <constraints nullable="true" />
+            </column>
+            <column name="template_id" type="varchar(255)" remarks="模板ID">
+                <constraints nullable="true" />
+            </column>
+            <column name="access_key" type="varchar(255)" remarks="accessKey">
+                <constraints nullable="true" />
+            </column>
+            <column name="secret_key" type="varchar(255)" remarks="secretKey">
+                <constraints nullable="true" />
+            </column>
+            <column name="region_id" type="varchar(255)" remarks="regionId">
+                <constraints nullable="true" />
+            </column>
+            <column name="sign_name" type="varchar(255)" remarks="短信签名">
+                <constraints nullable="true" />
+            </column>
+            <column name="remark" type="varchar(255)" remarks="备注">
+                <constraints nullable="true" />
+            </column>
+            <column name="enabled" type="boolean" remarks="启用">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here-->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+</databaseChangeLog>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity UReportFile.
+    -->
+    <changeSet id="20210608092425-2" author="jhipster">
+        <addForeignKeyConstraint baseColumnNames="common_table_id"
+                                 baseTableName="u_report_file"
+                                 constraintName="fk_u_report_file__common_table_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="common_table"/>
+    </changeSet>
+</databaseChangeLog>

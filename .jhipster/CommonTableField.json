@@ -1,0 +1,200 @@
+{
+  "name": "CommonTableField",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "javadoc": "标题",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "entityFieldName",
+      "fieldType": "String",
+      "javadoc": "属性名称",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "CommonFieldType",
+      "javadoc": "数据类型",
+      "fieldValues": "INTEGER,LONG,BOOLEAN,STRING,FLOAT,DOUBLE,ZONED_DATE_TIME,LOCATE_DATE,BIG_DECIMAL,TEXTBLOB,IMAGEBLOB,ENUM,UPLOAD_IMAGE,UPLOAD_FILE,ENTITY,RADIO,MULTI_SELECT,DATA_DICTIONARY,UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tableColumnName",
+      "fieldType": "String",
+      "javadoc": "字段名称",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "columnWidth",
+      "fieldType": "Integer",
+      "javadoc": "列宽",
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMin": "0",
+      "fieldValidateRulesMax": "1200"
+    },
+    {
+      "fieldName": "order",
+      "fieldType": "Integer",
+      "javadoc": "显示顺序"
+    },
+    {
+      "fieldName": "editInList",
+      "fieldType": "Boolean",
+      "javadoc": "行内编辑"
+    },
+    {
+      "fieldName": "hideInList",
+      "fieldType": "Boolean",
+      "javadoc": "列表隐藏"
+    },
+    {
+      "fieldName": "hideInForm",
+      "fieldType": "Boolean",
+      "javadoc": "表单隐藏"
+    },
+    {
+      "fieldName": "enableFilter",
+      "fieldType": "Boolean",
+      "javadoc": "可过滤"
+    },
+    {
+      "fieldName": "validateRules",
+      "fieldType": "String",
+      "javadoc": "验证规则",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "800"
+    },
+    {
+      "fieldName": "showInFilterTree",
+      "fieldType": "Boolean",
+      "javadoc": "显示在过滤树"
+    },
+    {
+      "fieldName": "fixed",
+      "fieldType": "FixedType",
+      "javadoc": "列固定",
+      "fieldValues": "LEFT,RIGHT"
+    },
+    {
+      "fieldName": "sortable",
+      "fieldType": "Boolean",
+      "javadoc": "可排序"
+    },
+    {
+      "fieldName": "treeIndicator",
+      "fieldType": "Boolean",
+      "javadoc": "树形标识"
+    },
+    {
+      "fieldName": "clientReadOnly",
+      "fieldType": "Boolean",
+      "javadoc": "前端只读"
+    },
+    {
+      "fieldName": "fieldValues",
+      "fieldType": "String",
+      "javadoc": "值范围",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2000"
+    },
+    {
+      "fieldName": "notNull",
+      "fieldType": "Boolean",
+      "javadoc": "必填"
+    },
+    {
+      "fieldName": "system",
+      "fieldType": "Boolean",
+      "javadoc": "系统字段"
+    },
+    {
+      "fieldName": "help",
+      "fieldType": "String",
+      "javadoc": "字段说明",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200",
+      "options": {
+        "fieldConfig": "hideInList-hideInForm"
+      }
+    },
+    {
+      "fieldName": "fontColor",
+      "fieldType": "String",
+      "javadoc": "字体颜色",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "80",
+      "options": {
+        "fieldConfig": "hideInList-hideInForm"
+      }
+    },
+    {
+      "fieldName": "backgroundColor",
+      "fieldType": "String",
+      "javadoc": "列背景色",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "80",
+      "options": {
+        "fieldConfig": "hideInList-hideInForm"
+      }
+    },
+    {
+      "fieldName": "nullHideInForm",
+      "fieldType": "Boolean",
+      "javadoc": "空值隐藏"
+    },
+    {
+      "fieldName": "endUsed",
+      "fieldType": "EndUsedType",
+      "javadoc": "前端用法",
+      "fieldValues": "FILE_URL,IMAGE_URL,VIDEO_URL,AUDIO_URL,EDITOR,CODE_EDITOR,SELECT,MODAL_SELECT,CHECKBOX,RADIO,RATE,SLIDER,SWITCH,TEXT_AREA,AVATAR"
+    },
+    {
+      "fieldName": "options",
+      "fieldType": "String",
+      "javadoc": "关系配置项",
+      "options": {
+        "endUsed": "codeEditor"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commonTable",
+      "otherEntityRelationshipName": "commonTableField",
+      "javadoc": "元模型",
+      "relationshipName": "metaModel",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commonTable",
+      "otherEntityRelationshipName": "commonTableFields",
+      "javadoc": "所属表 config: {\"showInOne\": true, \"additionalShowFields\": [\"tableName\"]}",
+      "relationshipName": "commonTable",
+      "otherEntityField": "name"
+    }
+  ],
+  "javadoc": "模型字段",
+  "entityTableName": "common_table_field",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "importData": true,
+  "skipComponent": "repository-serviceClass",
+  "microServiceCore": true,
+  "skipMenu": true,
+  "extendData": true,
+  "clientRootFolder": "modelConfig",
+  "changelogDate": "20210608092420"
+}

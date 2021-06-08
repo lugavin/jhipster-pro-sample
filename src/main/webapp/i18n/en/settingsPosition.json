@@ -1,0 +1,34 @@
+{
+  "jhipsterApplicationApp": {
+    "settingsPosition": {
+      "home": {
+        "title": "岗位",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new 岗位",
+        "createOrEditLabel": "Create or edit a 岗位",
+        "notFound": "No 岗位 found"
+      },
+      "created": "A new 岗位 is created with identifier {{ param }}",
+      "updated": "A 岗位 is updated with identifier {{ param }}",
+      "deleted": "A 岗位 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete 岗位 {{ id }}?"
+      },
+      "detail": {
+        "title": "岗位"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "sortNo": "Sort No",
+      "description": "Description",
+      "users": "员工列表",
+      "help": {
+        "code": "岗位代码",
+        "name": "名称",
+        "sortNo": "排序",
+        "description": "描述"
+      }
+    }
+  }
+}

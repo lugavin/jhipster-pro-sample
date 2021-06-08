@@ -1,0 +1,104 @@
+{
+  "name": "User",
+  "fields": [
+    {
+      "fieldName": "login",
+      "fieldType": "String",
+      "javadoc": "账户名"
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String",
+      "javadoc": "密码"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "javadoc": "名字"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "javadoc": "姓氏"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "javadoc": "电子邮箱"
+    },
+    {
+      "fieldName": "mobile",
+      "fieldType": "String",
+      "javadoc": "手机号码"
+    },
+    {
+      "fieldName": "birthday",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "生日"
+    },
+    {
+      "fieldName": "activated",
+      "fieldType": "Boolean",
+      "javadoc": "激活状态"
+    },
+    {
+      "fieldName": "langKey",
+      "fieldType": "String",
+      "javadoc": "语言Key"
+    },
+    {
+      "fieldName": "imageUrl",
+      "fieldType": "String",
+      "javadoc": "头像地址"
+    },
+    {
+      "fieldName": "activationKey",
+      "fieldType": "String",
+      "javadoc": "激活Key"
+    },
+    {
+      "fieldName": "resetKey",
+      "fieldType": "String",
+      "javadoc": "重置码"
+    },
+    {
+      "fieldName": "resetDate",
+      "fieldType": "Instant",
+      "javadoc": "重置时间"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "department",
+      "otherEntityRelationshipName": "users",
+      "javadoc": "部门",
+      "relationshipName": "department",
+      "otherEntityField": "name",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "position",
+      "otherEntityRelationshipName": "users",
+      "javadoc": "岗位",
+      "relationshipName": "position",
+      "otherEntityField": "name",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "jhi_user",
+  "embedded": false,
+  "javadoc": "用户",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "applications": "*",
+  "skipComponent": "domain-dto-mapper-criteria-repository-controllerTest-serviceClass-restController-listPage-listComponent-clientService",
+  "skipFakeData": true,
+  "skipClient": true,
+  "skipServer": true,
+  "changelogDate": "20210319031651"
+}

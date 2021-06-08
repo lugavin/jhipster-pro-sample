@@ -1,0 +1,74 @@
+{
+  "name": "Authority",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "角色名称"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "javadoc": "角色代号"
+    },
+    {
+      "fieldName": "info",
+      "fieldType": "String",
+      "javadoc": "信息"
+    },
+    {
+      "fieldName": "order",
+      "fieldType": "Integer",
+      "javadoc": "排序"
+    },
+    {
+      "fieldName": "display",
+      "fieldType": "Boolean",
+      "javadoc": "展示"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "department",
+      "otherEntityRelationshipName": "authorities",
+      "javadoc": "部门列表",
+      "ownerSide": false,
+      "relationshipName": "departments",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "apiPermission",
+      "otherEntityRelationshipName": "authorities",
+      "javadoc": "Api权限",
+      "ownerSide": true,
+      "relationshipName": "apiPermissions",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "viewPermission",
+      "otherEntityRelationshipName": "authorities",
+      "javadoc": "菜单列表",
+      "ownerSide": true,
+      "relationshipName": "viewPermissions",
+      "otherEntityField": "text"
+    }
+  ],
+  "entityTableName": "jhi_authority",
+  "clientRootFolder": "system",
+  "embedded": false,
+  "javadoc": "角色",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "applications": "*",
+  "skipComponent": "domain-dto-mapper-queryService-criteria-repository-serviceClass-updateComponent-controllerTest-restController-listPage-listComponent-clientService",
+  "skipFakeData": true,
+  "skipClient": true,
+  "skipServer": true,
+  "changelogDate": "20210319031651"
+}

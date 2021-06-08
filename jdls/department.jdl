@@ -1,0 +1,88 @@
+/**
+ * 部门
+ */
+@skipFakeData
+entity Department {
+    name String /** 名称 */
+    code String /** 代码 */
+    address String /** 地址 */
+    phoneNum String /** 联系电话 */
+    logo String /** logo地址 */
+    contact String /** 联系人 */
+    createUserId Long /** 创建用户 Id */
+    createTime ZonedDateTime /** 创建时间 */
+}
+
+/**
+ * 岗位
+ * @author jhipster.pro
+ */
+@skipFakeData
+entity Position {
+    code String maxlength(50) unique required /** 岗位代码 */
+    name String maxlength(50) unique required /** 名称 */
+    sortNo Integer /** 排序 */
+    description String maxlength(200) /** 描述 */
+}
+
+/** 业务类型 */
+@importData
+entity BusinessType {
+    name String /** 名称 */
+    code String /** 代码 */
+    description String /** 描述 */
+    icon String /** 图标 */
+}
+
+/**
+ * One to many relationship.
+ */
+relationship OneToMany {
+
+    /** 下级部门 */
+    Department{children(name)}
+    to
+    /** 上级 */
+    Department{parent(name)}
+
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+
+    /** 部门 */
+    User{department(name)}
+    to
+    /** 员工列表 */
+    Department{users(firstName)}
+
+    /** 岗位 */
+    User{position(name)}
+    to
+    /** 员工列表 */
+    Position{users(firstName)}
+
+}
+
+
+/**
+ * Many to many relationship.
+ */
+relationship ManyToMany {
+
+    /** 角色列表 */
+    Department{authorities(name)}
+    to
+    /** 部门列表 */
+    Authority{departments(name)}
+
+}
+
+service all with serviceClass
+filter *
+dto * with mapstruct
+paginate * with pagination
+clientRootFolder Department, BusinessType, Position with settings
+//

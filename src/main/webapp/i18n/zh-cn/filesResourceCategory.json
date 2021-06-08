@@ -1,0 +1,35 @@
+{
+  "jhipsterApplicationApp": {
+    "filesResourceCategory": {
+      "home": {
+        "title": "资源分类",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 资源分类",
+        "createOrEditLabel": "创建或编辑 资源分类",
+        "notFound": "No 资源分类 found"
+      },
+      "created": "资源分类 {{ param }} 创建成功",
+      "updated": "资源分类 {{ param }} 更新成功",
+      "deleted": "资源分类 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 资源分类 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "资源分类"
+      },
+      "id": "ID",
+      "title": "Title",
+      "code": "Code",
+      "sort": "Sort",
+      "files": "文件列表",
+      "children": "下级列表",
+      "images": "图片列表",
+      "parent": "上级",
+      "help": {
+        "title": "标题",
+        "code": "代码",
+        "sort": "排序"
+      }
+    }
+  }
+}

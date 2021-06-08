@@ -1,0 +1,62 @@
+{
+  "name": "DataDictionary",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "名称"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "javadoc": "代码"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "javadoc": "描述"
+    },
+    {
+      "fieldName": "fontColor",
+      "fieldType": "String",
+      "javadoc": "字体颜色"
+    },
+    {
+      "fieldName": "backgroundColor",
+      "fieldType": "String",
+      "javadoc": "背景颜色"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "dataDictionary",
+      "otherEntityRelationshipName": "parent",
+      "javadoc": "子节点",
+      "relationshipName": "children",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "dataDictionary",
+      "otherEntityRelationshipName": "children",
+      "javadoc": "上级节点",
+      "relationshipName": "parent",
+      "otherEntityField": "name"
+    }
+  ],
+  "javadoc": "数据字典",
+  "entityTableName": "data_dictionary",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipFakeData": true,
+  "microServiceCore": true,
+  "clientRootFolder": "settings",
+  "changelogDate": "20210608092437"
+}

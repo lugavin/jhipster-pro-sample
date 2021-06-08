@@ -1,0 +1,33 @@
+{
+  "jhipsterApplicationApp": {
+    "settingsBusinessType": {
+      "home": {
+        "title": "业务类型",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new 业务类型",
+        "createOrEditLabel": "Create or edit a 业务类型",
+        "notFound": "No 业务类型 found"
+      },
+      "created": "A new 业务类型 is created with identifier {{ param }}",
+      "updated": "A 业务类型 is updated with identifier {{ param }}",
+      "deleted": "A 业务类型 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete 业务类型 {{ id }}?"
+      },
+      "detail": {
+        "title": "业务类型"
+      },
+      "id": "ID",
+      "name": "Name",
+      "code": "Code",
+      "description": "Description",
+      "icon": "Icon",
+      "help": {
+        "name": "名称",
+        "code": "代码",
+        "description": "描述",
+        "icon": "图标"
+      }
+    }
+  }
+}

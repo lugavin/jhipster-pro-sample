@@ -1,0 +1,81 @@
+{
+  "name": "AdministrativeDivision",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "名称"
+    },
+    {
+      "fieldName": "areaCode",
+      "fieldType": "String",
+      "javadoc": "地区代码"
+    },
+    {
+      "fieldName": "cityCode",
+      "fieldType": "String",
+      "javadoc": "城市代码"
+    },
+    {
+      "fieldName": "mergerName",
+      "fieldType": "String",
+      "javadoc": "全名"
+    },
+    {
+      "fieldName": "shortName",
+      "fieldType": "String",
+      "javadoc": "短名称"
+    },
+    {
+      "fieldName": "zipCode",
+      "fieldType": "String",
+      "javadoc": "邮政编码"
+    },
+    {
+      "fieldName": "level",
+      "fieldType": "Integer",
+      "javadoc": "行政区域等级（0: 省级 1:市级 2:县级 3:镇级 4:乡村级）"
+    },
+    {
+      "fieldName": "lng",
+      "fieldType": "Double",
+      "javadoc": "经度"
+    },
+    {
+      "fieldName": "lat",
+      "fieldType": "Double",
+      "javadoc": "纬度"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "administrativeDivision",
+      "otherEntityRelationshipName": "parent",
+      "javadoc": "子节点",
+      "relationshipName": "children",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "administrativeDivision",
+      "otherEntityRelationshipName": "children",
+      "javadoc": "上级节点",
+      "relationshipName": "parent",
+      "otherEntityField": "name"
+    }
+  ],
+  "javadoc": "行政区划",
+  "entityTableName": "administrative_division",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microServiceCore": true,
+  "clientRootFolder": "settings",
+  "changelogDate": "20210608092432"
+}

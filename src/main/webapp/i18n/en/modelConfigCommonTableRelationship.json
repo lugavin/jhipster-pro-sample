@@ -1,0 +1,83 @@
+{
+  "jhipsterApplicationApp": {
+    "modelConfigCommonTableRelationship": {
+      "home": {
+        "title": "模型关系",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new 模型关系",
+        "createOrEditLabel": "Create or edit a 模型关系",
+        "notFound": "No 模型关系 found"
+      },
+      "created": "A new 模型关系 is created with identifier {{ param }}",
+      "updated": "A 模型关系 is updated with identifier {{ param }}",
+      "deleted": "A 模型关系 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete 模型关系 {{ id }}?"
+      },
+      "detail": {
+        "title": "模型关系"
+      },
+      "id": "ID",
+      "name": "Name",
+      "relationshipType": "Relationship Type",
+      "sourceType": "Source Type",
+      "otherEntityField": "Other Entity Field",
+      "otherEntityName": "Other Entity Name",
+      "relationshipName": "Relationship Name",
+      "otherEntityRelationshipName": "Other Entity Relationship Name",
+      "columnWidth": "Column Width",
+      "order": "Order",
+      "fixed": "Fixed",
+      "editInList": "Edit In List",
+      "enableFilter": "Enable Filter",
+      "hideInList": "Hide In List",
+      "hideInForm": "Hide In Form",
+      "system": "System",
+      "fontColor": "Font Color",
+      "backgroundColor": "Background Color",
+      "help": "Help",
+      "ownerSide": "Owner Side",
+      "dataName": "Data Name",
+      "webComponentType": "Web Component Type",
+      "otherEntityIsTree": "Other Entity Is Tree",
+      "showInFilterTree": "Show In Filter Tree",
+      "dataDictionaryCode": "Data Dictionary Code",
+      "clientReadOnly": "Client Read Only",
+      "endUsed": "End Used",
+      "options": "Options",
+      "relationEntity": "关联实体",
+      "dataDictionaryNode": "字典表节点",
+      "metaModel": "元模型",
+      "commonTable": "所属表",
+      "help": {
+        "name": "名称",
+        "relationshipType": "关系类型",
+        "sourceType": "来源类型",
+        "otherEntityField": "关联表显示字段",
+        "otherEntityName": "关联实体名称",
+        "relationshipName": "关系属性名称",
+        "otherEntityRelationshipName": "对方属性名称",
+        "columnWidth": "列宽",
+        "order": "显示顺序",
+        "fixed": "列固定",
+        "editInList": "行内编辑",
+        "enableFilter": "可过滤",
+        "hideInList": "列表隐藏",
+        "hideInForm": "表单隐藏",
+        "system": "系统定义",
+        "fontColor": "字体颜色",
+        "backgroundColor": "列背景色",
+        "help": "详细字段说明",
+        "ownerSide": "是否维护端",
+        "dataName": "数据源名称",
+        "webComponentType": "Web控件类型",
+        "otherEntityIsTree": "是否树形实体",
+        "showInFilterTree": "显示在过滤树",
+        "dataDictionaryCode": "字典表代码",
+        "clientReadOnly": "前端只读",
+        "endUsed": "前端用法",
+        "options": "关系配置项"
+      }
+    }
+  }
+}

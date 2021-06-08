@@ -1,0 +1,65 @@
+{
+  "name": "SmsConfig",
+  "fields": [
+    {
+      "fieldName": "provider",
+      "fieldType": "SmsProvider",
+      "javadoc": "提供商",
+      "fieldValues": "YUNPIAN,QINIU,ALI,TENCENT"
+    },
+    {
+      "fieldName": "smsCode",
+      "fieldType": "String",
+      "javadoc": "资源编号"
+    },
+    {
+      "fieldName": "templateId",
+      "fieldType": "String",
+      "javadoc": "模板ID"
+    },
+    {
+      "fieldName": "accessKey",
+      "fieldType": "String",
+      "javadoc": "accessKey"
+    },
+    {
+      "fieldName": "secretKey",
+      "fieldType": "String",
+      "javadoc": "secretKey"
+    },
+    {
+      "fieldName": "regionId",
+      "fieldType": "String",
+      "javadoc": "regionId"
+    },
+    {
+      "fieldName": "signName",
+      "fieldType": "String",
+      "javadoc": "短信签名"
+    },
+    {
+      "fieldName": "remark",
+      "fieldType": "String",
+      "javadoc": "备注"
+    },
+    {
+      "fieldName": "enabled",
+      "fieldType": "Boolean",
+      "javadoc": "启用"
+    }
+  ],
+  "relationships": [],
+  "javadoc": "短信配置",
+  "entityTableName": "sms_config",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "skipFakeData": true,
+  "clientRootFolder": "files",
+  "changelogDate": "20210608092424"
+}

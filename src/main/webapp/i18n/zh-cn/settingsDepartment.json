@@ -1,0 +1,45 @@
+{
+  "jhipsterApplicationApp": {
+    "settingsDepartment": {
+      "home": {
+        "title": "部门",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 部门",
+        "createOrEditLabel": "创建或编辑 部门",
+        "notFound": "No 部门 found"
+      },
+      "created": "部门 {{ param }} 创建成功",
+      "updated": "部门 {{ param }} 更新成功",
+      "deleted": "部门 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 部门 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "部门"
+      },
+      "id": "ID",
+      "name": "Name",
+      "code": "Code",
+      "address": "Address",
+      "phoneNum": "Phone Num",
+      "logo": "Logo",
+      "contact": "Contact",
+      "createUserId": "Create User Id",
+      "createTime": "Create Time",
+      "children": "下级部门",
+      "authorities": "角色列表",
+      "parent": "上级",
+      "users": "员工列表",
+      "help": {
+        "name": "名称",
+        "code": "代码",
+        "address": "地址",
+        "phoneNum": "联系电话",
+        "logo": "logo地址",
+        "contact": "联系人",
+        "createUserId": "创建用户 Id",
+        "createTime": "创建时间"
+      }
+    }
+  }
+}

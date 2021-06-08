@@ -1,0 +1,43 @@
+{
+  "jhipsterApplicationApp": {
+    "filesSmsConfig": {
+      "home": {
+        "title": "短信配置",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 短信配置",
+        "createOrEditLabel": "创建或编辑 短信配置",
+        "notFound": "No 短信配置 found"
+      },
+      "created": "短信配置 {{ param }} 创建成功",
+      "updated": "短信配置 {{ param }} 更新成功",
+      "deleted": "短信配置 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 短信配置 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "短信配置"
+      },
+      "id": "ID",
+      "provider": "Provider",
+      "smsCode": "Sms Code",
+      "templateId": "Template Id",
+      "accessKey": "Access Key",
+      "secretKey": "Secret Key",
+      "regionId": "Region Id",
+      "signName": "Sign Name",
+      "remark": "Remark",
+      "enabled": "Enabled",
+      "help": {
+        "provider": "提供商",
+        "smsCode": "资源编号",
+        "templateId": "模板ID",
+        "accessKey": "accessKey",
+        "secretKey": "secretKey",
+        "regionId": "regionId",
+        "signName": "短信签名",
+        "remark": "备注",
+        "enabled": "启用"
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "jhipsterApplicationApp": {
+    "filesUploadFile": {
+      "home": {
+        "title": "上传文件",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 上传文件",
+        "createOrEditLabel": "创建或编辑 上传文件",
+        "notFound": "No 上传文件 found"
+      },
+      "created": "上传文件 {{ param }} 创建成功",
+      "updated": "上传文件 {{ param }} 更新成功",
+      "deleted": "上传文件 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 上传文件 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "上传文件"
+      },
+      "id": "ID",
+      "fullName": "Full Name",
+      "name": "Name",
+      "ext": "Ext",
+      "type": "Type",
+      "url": "Url",
+      "path": "Path",
+      "folder": "Folder",
+      "entityName": "Entity Name",
+      "createAt": "Create At",
+      "fileSize": "File Size",
+      "referenceCount": "Reference Count",
+      "user": "上传者",
+      "category": "所属分类",
+      "help": {
+        "fullName": "完整文件名\n不含路径",
+        "name": "文件名\n不含扩展名",
+        "ext": "扩展名",
+        "type": "文件类型",
+        "url": "Url地址",
+        "path": "本地路径",
+        "folder": "存储目录",
+        "entityName": "实体名称",
+        "createAt": "创建时间",
+        "fileSize": "文件大小",
+        "referenceCount": "被引次数"
+      }
+    }
+  }
+}

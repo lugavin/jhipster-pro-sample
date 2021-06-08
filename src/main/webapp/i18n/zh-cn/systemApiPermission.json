@@ -1,0 +1,42 @@
+{
+  "jhipsterApplicationApp": {
+    "systemApiPermission": {
+      "home": {
+        "title": "API权限",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 API权限",
+        "createOrEditLabel": "创建或编辑 API权限",
+        "notFound": "No API权限 found"
+      },
+      "created": "API权限 {{ param }} 创建成功",
+      "updated": "API权限 {{ param }} 更新成功",
+      "deleted": "API权限 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 API权限 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "API权限"
+      },
+      "id": "ID",
+      "serviceName": "Service Name",
+      "name": "Name",
+      "code": "Code",
+      "description": "Description",
+      "type": "Type",
+      "method": "Method",
+      "url": "Url",
+      "children": "子节点",
+      "parent": "上级",
+      "authorities": "角色列表",
+      "help": {
+        "serviceName": "服务名称",
+        "name": "权限名称",
+        "code": "权限代码(ROLE_开头)",
+        "description": "权限描述",
+        "type": "类型",
+        "method": "请求类型",
+        "url": "url 地址"
+      }
+    }
+  }
+}
